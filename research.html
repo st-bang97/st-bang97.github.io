@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research interests of Seongtae Bang: GPU memory systems, efficient LLM training, and computer architecture.">
+  <title>Research — Seongtae Bang</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html">Seongtae Bang</a><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button><nav class="nav-links"><a href="index.html">Home</a><a class="active" href="research.html">Research</a><a href="publications.html">Publications</a><a href="index.html#education">Education</a></nav></div></header>
+<main>
+  <section class="page-hero"><div class="container"><div class="eyebrow">Research</div><h1>Systems for memory-constrained AI.</h1><p>My work focuses on the interaction among GPU memory management, heterogeneous CPU–GPU execution, and the training systems that depend on them.</p></div></section>
+  <section class="section"><div class="container">
+    <div class="section-heading"><h2>GPU Memory Systems</h2><p>I study UVM oversubscription, far-page-fault recovery, prefetching, migration, and reclamation. The goal is to reduce host-mediated overheads and expose more memory capacity without sacrificing GPU throughput.</p></div>
+    <div class="section-heading"><h2>Efficient LLM Training</h2><p>I investigate CPU-offloaded training, optimizer scheduling, gradient lifetime, and overlap across CPU and GPU execution. The emphasis is on moving memory-intensive training state off the critical path while retaining scalable GPU execution.</p></div>
+    <div class="section-heading"><h2>Architecture & Simulation</h2><p>I use and extend architectural simulators and full-system infrastructure to evaluate GPU, memory, and networking mechanisms with controlled microarchitectural detail.</p></div>
+  </div></section>
+  <section class="section"><div class="container"><div class="section-heading"><h2>Representative Work</h2><p>Selected papers spanning these research directions.</p></div><div id="selected-publications" class="publications-list"></div></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-row"><span>© <span data-current-year></span> Seongtae Bang</span><a href="publications.html">Publications</a></div></footer>
+<script src="assets/js/publications.js"></script><script src="assets/js/site.js"></script>
+</body>
+</html>
