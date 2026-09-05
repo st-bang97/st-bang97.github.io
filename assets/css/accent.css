@@ -1,0 +1,87 @@
+/* Restrained secondary color system: keeps navy as the primary accent while using muted category colors for visual parsing. */
+:root {
+  --accent-teal: #3f6b67;
+  --accent-rust: #916144;
+  --accent-plum: #665a78;
+}
+
+/* Hero: current research should read as active work, not a faded aside. */
+.intro-note {
+  color: #38332d;
+  font-weight: 580;
+  padding-left: 13px;
+  border-left: 2px solid rgba(63, 107, 103, .42);
+}
+
+.accent-memory { color: var(--accent); font-weight: 650; }
+.accent-execution { color: var(--accent-teal); font-weight: 650; }
+.accent-training { color: var(--accent-rust); font-weight: 650; }
+.accent-graphics { color: var(--accent-plum); font-weight: 650; }
+
+/* Research identity: one muted hue per research direction. */
+.research-signal:nth-child(1) { color: var(--accent); }
+.research-signal:nth-child(2) { color: var(--accent-teal); }
+.research-signal:nth-child(3) { color: var(--accent-rust); }
+.research-signal:nth-child(4) { color: var(--accent-plum); }
+
+.research-signal:nth-child(1) .research-signal-icon {
+  color: var(--accent);
+  background: rgba(41, 71, 101, .08);
+  border-color: rgba(41, 71, 101, .20);
+}
+.research-signal:nth-child(2) .research-signal-icon {
+  color: var(--accent-teal);
+  background: rgba(63, 107, 103, .08);
+  border-color: rgba(63, 107, 103, .20);
+}
+.research-signal:nth-child(3) .research-signal-icon {
+  color: var(--accent-rust);
+  background: rgba(145, 97, 68, .08);
+  border-color: rgba(145, 97, 68, .20);
+}
+.research-signal:nth-child(4) .research-signal-icon {
+  color: var(--accent-plum);
+  background: rgba(102, 90, 120, .08);
+  border-color: rgba(102, 90, 120, .20);
+}
+
+/* Carry the same semantic palette into the research summaries. */
+.topic-item:nth-child(1) h3,
+.narrative-block:nth-child(1) h2 { color: var(--accent); }
+.topic-item:nth-child(2) h3,
+.narrative-block:nth-child(2) h2 { color: var(--accent-teal); }
+.topic-item:nth-child(3) h3,
+.narrative-block:nth-child(3) h2 { color: var(--accent-rust); }
+.topic-item:nth-child(4) h3,
+.narrative-block:nth-child(4) h2 { color: var(--accent-plum); }
+
+/* Venue/status information gets a warm secondary accent; links stay navy. */
+.venue-badge {
+  background: var(--accent-rust);
+  box-shadow: 0 4px 12px rgba(145, 97, 68, .13);
+}
+.home-publication-card:hover .venue-badge,
+.publication-card:hover .venue-badge {
+  box-shadow: 0 6px 16px rgba(145, 97, 68, .18);
+}
+.venue-inline { color: var(--accent-rust); }
+
+/* Authorship/status is visually separate from venue and topic metadata. */
+.author-note,
+.home-author-note {
+  color: var(--accent-teal);
+}
+.author-note {
+  background: rgba(63, 107, 103, .08);
+}
+
+/* Keep current-work bullets legible and use color only on the key phrases. */
+.current-research-list li { color: #4a453e; }
+.current-research-list li:nth-child(1) { border-left: 2px solid rgba(145, 97, 68, .28); padding-left: 10px; }
+.current-research-list li:nth-child(2) { border-left: 2px solid rgba(63, 107, 103, .28); padding-left: 10px; }
+.current-research-list li:nth-child(3) { border-left: 2px solid rgba(102, 90, 120, .28); padding-left: 10px; }
+
+@media (max-width: 680px) {
+  .intro-note { padding-left: 11px; }
+  .research-signal { white-space: normal; }
+}

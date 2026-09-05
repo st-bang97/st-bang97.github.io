@@ -35,3 +35,11 @@ The current homepage references the public GitHub avatar directly. To use a loca
 ## CV
 
 When a CV PDF is ready, place it at `assets/cv/seongtae-bang-cv.pdf` and add a CV button to the hero section.
+
+## Homepage sections
+
+The homepage includes research areas, current research, technical skills, publications with interactive paper overviews, education, and contact information.
+
+## Public code
+
+pNet-gem5 code and execution examples: https://github.com/caslab-yonsei/pNet-gem5

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+<title id="title">ReplayOpt overview</title><desc id="desc">ReplayOpt dispatches low-precision parameters needed by the next GPU iteration before replaying deferred high-precision optimizer-state persistence during GPU compute.</desc>
+<rect width="760" height="420" fill="#f7f8fa"/><text x="34" y="42" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#17202b">ReplayOpt</text><text x="34" y="68" font-family="Arial,sans-serif" font-size="13" fill="#66717e">Move host-memory persistence off the iteration-boundary critical path</text>
+<text x="35" y="112" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#44505d">GPU</text><text x="35" y="239" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#44505d">CPU</text>
+<line x1="86" y1="100" x2="726" y2="100" stroke="#d4d9df"/><line x1="86" y1="227" x2="726" y2="227" stroke="#d4d9df"/>
+<rect x="100" y="123" width="145" height="63" rx="10" fill="#e9f1fa" stroke="#7f9fc4"/><text x="133" y="153" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#204f85">Backward i</text><text x="119" y="173" font-family="Arial,sans-serif" font-size="10" fill="#41698f">gradient becomes ready</text>
+<rect x="265" y="250" width="144" height="67" rx="10" fill="#fff3e6" stroke="#d9a05b"/><text x="309" y="278" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#88561f">Dispatch</text><text x="284" y="298" font-family="Arial,sans-serif" font-size="10" fill="#715d47">emit BF16/FP16 first</text>
+<path d="M245 154 C270 154 257 273 265 273" fill="none" stroke="#7c8792" stroke-width="2"/><polygon points="265,273 256,267 257,278" fill="#7c8792"/>
+<path d="M409 272 C445 272 440 157 460 157" fill="none" stroke="#2f6fa8" stroke-width="3"/><polygon points="460,157 450,151 451,163" fill="#2f6fa8"/>
+<rect x="460" y="123" width="147" height="63" rx="10" fill="#eaf5ec" stroke="#8ab493"/><text x="498" y="153" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#35663e">Forward i+1</text><text x="486" y="173" font-family="Arial,sans-serif" font-size="10" fill="#52715a">GPU starts immediately</text>
+<rect x="438" y="250" width="194" height="67" rx="10" fill="#eef0f2" stroke="#abb3bc"/><text x="495" y="278" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#48535f">Replay</text><text x="464" y="298" font-family="Arial,sans-serif" font-size="10" fill="#65707b">persist deferred FP32 state</text>
+<rect x="459" y="343" width="173" height="36" rx="9" fill="#fff" stroke="#cfd6de"/><text x="478" y="366" font-family="Arial,sans-serif" font-size="11" fill="#53606c">overlap with GPU compute</text>
+<path d="M535 317 L535 343" stroke="#8a949e" stroke-width="2"/><text x="620" y="154" font-family="Arial,sans-serif" font-size="10" fill="#66717e">shorter critical path</text>
+</svg>
