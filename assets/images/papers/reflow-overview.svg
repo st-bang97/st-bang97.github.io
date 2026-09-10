@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+<title id="title">ReFlow overview</title>
+<desc id="desc">ReFlow keeps gradients compact, executes the host optimizer in a register-resident SIMD body, generates BF16 parameters on the latency-critical Ready path, and defers FP32 optimizer-state persistence to CPU slack.</desc>
+<rect width="760" height="420" fill="#f7f8fa"/>
+<text x="34" y="42" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#17202b">ReFlow</text>
+<text x="34" y="68" font-family="Arial,sans-serif" font-size="13" fill="#66717e">Expose parallelism in CPU-offloaded training by separating readiness from persistence</text>
+
+<text x="36" y="116" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#44505d">GPU</text>
+<text x="36" y="257" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#44505d">CPU</text>
+<line x1="82" y1="104" x2="728" y2="104" stroke="#d4d9df"/>
+<line x1="82" y1="245" x2="728" y2="245" stroke="#d4d9df"/>
+
+<rect x="96" y="126" width="135" height="66" rx="10" fill="#e9f1fa" stroke="#7f9fc4"/>
+<text x="129" y="153" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#204f85">Backward i</text>
+<text x="115" y="174" font-family="Arial,sans-serif" font-size="10" fill="#41698f">BF16 gradient produced</text>
+
+<rect x="108" y="277" width="157" height="68" rx="10" fill="#eef6ff" stroke="#84a9d4"/>
+<text x="126" y="304" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#285b91">CPU-Centric Gradient</text>
+<text x="128" y="324" font-family="Arial,sans-serif" font-size="10" fill="#5b7188">BF16 across PCIe</text>
+<path d="M163 192 L163 277" stroke="#5e7fa5" stroke-width="2.5"/>
+<polygon points="163,277 157,267 169,267" fill="#5e7fa5"/>
+
+<rect x="300" y="268" width="174" height="86" rx="11" fill="#fff3e6" stroke="#d9a05b"/>
+<text x="351" y="293" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#88561f">FlashOpt</text>
+<text x="322" y="314" font-family="Arial,sans-serif" font-size="10" fill="#715d47">register-resident SIMD fusion</text>
+<text x="326" y="333" font-family="Arial,sans-serif" font-size="10" fill="#715d47">promote · scale · update · cast</text>
+<path d="M265 311 L300 311" stroke="#8a949e" stroke-width="2.5"/>
+<polygon points="300,311 290,305 290,317" fill="#8a949e"/>
+
+<rect x="512" y="126" width="154" height="66" rx="10" fill="#eaf5ec" stroke="#8ab493"/>
+<text x="554" y="153" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#35663e">Forward i+1</text>
+<text x="535" y="174" font-family="Arial,sans-serif" font-size="10" fill="#52715a">starts from BF16 Ready output</text>
+
+<path d="M474 286 C510 286 492 159 512 159" fill="none" stroke="#2f6fa8" stroke-width="3"/>
+<polygon points="512,159 502,153 503,165" fill="#2f6fa8"/>
+<rect x="476" y="220" width="86" height="28" rx="8" fill="#e7f1fb" stroke="#9bb9d8"/>
+<text x="494" y="239" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#2f6fa8">READY first</text>
+
+<rect x="514" y="284" width="176" height="68" rx="10" fill="#eef0f2" stroke="#abb3bc"/>
+<text x="554" y="311" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#48535f">Persist FP32 state</text>
+<text x="535" y="332" font-family="Arial,sans-serif" font-size="10" fill="#65707b">deferred into CPU slack</text>
+<path d="M474 327 L514 327" stroke="#7f8994" stroke-width="2.5"/>
+<polygon points="514,327 504,321 504,333" fill="#7f8994"/>
+
+<rect x="285" y="126" width="151" height="62" rx="10" fill="#fff" stroke="#cfd6de"/>
+<text x="326" y="151" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#4f5964">Validation</text>
+<text x="304" y="171" font-family="Arial,sans-serif" font-size="10" fill="#6a747f">norm / clipping factor</text>
+<path d="M231 158 L285 158" stroke="#9a6f6f" stroke-width="2" stroke-dasharray="5 4"/>
+<polygon points="285,158 275,152 275,164" fill="#9a6f6f"/>
+<path d="M360 188 C360 221 410 218 433 267" fill="none" stroke="#9a6f6f" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="296" y="217" font-family="Arial,sans-serif" font-size="10" fill="#8a5c5c">clipped step: replay only Ready path</text>
+
+<rect x="92" y="372" width="598" height="28" rx="8" fill="#ffffff" stroke="#d6dbe1"/>
+<text x="112" y="391" font-family="Arial,sans-serif" font-size="11" fill="#53606c">Critical path: compact gradient → register-resident update → BF16 Ready; heavy FP32 persistence proceeds in the background.</text>
+</svg>
