@@ -3,155 +3,132 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Seongtae Bang — Ph.D. student at DGIST working on GPU systems, computer architecture, AI/ML systems, scalable 3D Gaussian Splatting, and efficient LLM/MoE training.">
-  <meta property="og:title" content="Seongtae Bang">
-  <meta property="og:description" content="Research in GPU systems, memory systems, scalable AI/ML training, 3D Gaussian Splatting, and computer architecture.">
+  <meta name="description" content="Seongtae Bang — Ph.D. student at DGIST and CASLAB member at Yonsei University. Research in GPU memory systems, CPU–GPU execution, AI training, and computer architecture.">
+  <meta property="og:title" content="Seongtae Bang — GPU Systems Researcher">
+  <meta property="og:description" content="GPU memory management, heterogeneous CPU–GPU execution, and systems for large-scale AI training. Research, publications, and background.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://st-bang97.github.io/">
-  <title>Seongtae Bang</title>
+  <title>Seongtae Bang — GPU Systems Researcher</title>
+  <link rel="canonical" href="https://st-bang97.github.io/">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/motion.css">
-  <link rel="stylesheet" href="assets/css/mobile.css" media="screen and (max-width: 820px)">
-  <link rel="stylesheet" href="assets/css/accent.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="index.html">Seongtae Bang</a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a class="active" href="index.html">Home</a>
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">sb.</span><span>Seongtae Bang</span></a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation" hidden>Menu</button>
+    <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
+      <a class="active" aria-current="page" href="index.html">Home</a>
       <a href="research.html">Research &amp; Publications</a>
     </nav>
   </div>
 </header>
-
-<main>
-  <section class="intro">
+<main id="main-content">
+  <section class="intro" aria-labelledby="intro-title">
     <div class="container intro-grid">
       <div class="intro-copy">
-        <p class="eyebrow">GPU Systems · ML Systems · Computer Architecture</p>
-        <h1>Seongtae Bang</h1>
-        <p class="intro-role">Ph.D. Student, DGIST · Member of <a href="https://caslab-yonsei.github.io/" target="_blank" rel="noopener">CASLAB@Yonsei</a></p>
-        <p class="lead">I build systems for efficient <span class="accent-memory">GPU memory management</span> and <span class="accent-execution">heterogeneous CPU–GPU execution</span> for <span class="accent-training">large-scale AI workloads</span>.</p>
-        <p class="intro-note">Currently, I am researching efficient <span class="accent-training">Mixture-of-Experts training</span> and <span class="accent-graphics">scalable 3D Gaussian Splatting</span>.</p>
-        <div class="research-signals" aria-label="Research areas">
-          <div class="research-signal"><span class="research-signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12v-2"/><path d="M12 18v-2"/><path d="M16 12v-2"/><path d="M16 18v-2"/><path d="M2 11h1.5"/><path d="M20 18v-2"/><path d="M20.5 11H22"/><path d="M4 18v-2"/><path d="M8 12v-2"/><path d="M8 18v-2"/><rect x="2" y="6" width="20" height="10" rx="2"/></svg></span><span>GPU Memory</span></div>
-          <div class="research-signal"><span class="research-signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span><span>CPU–GPU Execution</span></div>
-          <div class="research-signal"><span class="research-signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></svg></span><span>AI Training</span></div>
-          <div class="research-signal"><span class="research-signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></span><span>Architecture &amp; Simulation</span></div>
+        <p class="eyebrow">GPU systems <span aria-hidden="true">/</span> Computer architecture</p>
+        <h1 id="intro-title"><span>Seongtae</span> <span class="name-last">Bang<span class="name-period" aria-hidden="true">.</span></span></h1>
+        <p class="intro-role">Ph.D. Student, DGIST <span class="role-divider" aria-hidden="true">/</span> <a href="https://caslab-yonsei.github.io/" target="_blank" rel="noopener">CASLAB, Yonsei University</a></p>
+        <p class="lead">I design <span class="accent-memory">GPU memory management</span> and <span class="accent-execution">CPU–GPU execution</span> mechanisms for efficient, large-scale AI training.</p>
+        <p class="intro-note">Currently working on <strong>Mixture-of-Experts training</strong> and <strong>scalable 3D Gaussian Splatting</strong>.</p>
+        <div class="intro-actions">
+          <a class="button primary" href="research.html">Explore my research <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="mailto:st.bang@dgist.ac.kr">Get in touch <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="link-row">
-          <a class="button primary" href="research.html">Research &amp; Publications</a>
-          <a class="button subtle" href="mailto:st.bang@dgist.ac.kr">Email</a>
-          <a class="button subtle" href="https://github.com/st-bang97" target="_blank" rel="noopener">GitHub</a>
-          <a class="button subtle" href="https://orcid.org/0000-0002-2928-1403" target="_blank" rel="noopener">ORCID</a>
-          <a class="button subtle" href="https://www.linkedin.com/in/stbang/" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="social-links" aria-label="Research and professional profiles">
+          <a href="https://github.com/st-bang97" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://orcid.org/0000-0002-2928-1403" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://www.linkedin.com/in/stbang/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <div class="profile-photo">
-        <img src="assets/images/profile.jpg" alt="Seongtae Bang" loading="eager">
+      <div class="portrait-column">
+        <figure class="profile-photo">
+          <img src="assets/images/profile.jpg" alt="Seongtae Bang" width="1200" height="1600" fetchpriority="high">
+          <figcaption><span>Research focus</span><strong>Memory. Execution. Scale.</strong></figcaption>
+        </figure>
+        <p class="portrait-note">From GPU architecture and drivers<br>to the systems that train AI.</p>
       </div>
+    </div>
+    <div class="container recognition-strip" aria-label="Recent research acceptances">
+      <div class="recognition-intro"><span class="small-label">Recent work</span><span>2026 / 2027</span></div>
+      <div class="recognition-item"><strong>ASPLOS <span>2027</span></strong><p>ML systems paper <span class="acceptance-label">Accepted</span></p></div>
+      <a class="recognition-item" href="publications.html#reclaimx"><strong>MICRO <span>2026</span></strong><p>ReclaimX <span>First author</span></p></a>
+      <a class="recognition-item" href="publications.html#ariadne"><strong>HPCA <span>2026</span></strong><p>ARIADNE <span>Co-author</span></p></a>
     </div>
   </section>
 
-  <section class="section publications-home-section">
+  <section class="section publications-home-section" aria-labelledby="selected-title">
     <div class="container">
-      <div class="section-title section-title-row">
-        <h2>Publications</h2>
-        <a href="publications.html">Full list →</a>
+      <div class="section-heading">
+        <div><p class="section-kicker"><span>01</span> Selected work</p><h2 id="selected-title">Systems with measurable impact.</h2></div>
+        <a class="text-link" href="publications.html">All publications <span aria-hidden="true">↗</span></a>
       </div>
       <div id="home-publications" class="home-publications-grid"></div>
-      <div id="home-paper-detail" class="home-paper-detail" hidden></div>
+      <div id="home-paper-detail" class="home-paper-detail" role="region" aria-labelledby="home-detail-title" hidden></div>
+      <noscript><p>Read the publication records for <a href="https://caslab-yonsei.github.io/publications/micro26-sbang/">ReclaimX</a>, <a href="https://doi.org/10.1109/LCA.2026.3676470">ReplayOpt</a>, <a href="https://doi.org/10.1109/HPCA68181.2026.11408564">ARIADNE</a>, and <a href="https://doi.org/10.1109/LCA.2025.3553143">SAFE</a>.</p></noscript>
     </div>
   </section>
 
-  <section class="section home-overview-section">
-    <div class="container home-overview-grid">
-      <section class="home-research-block">
-        <div class="section-title"><h2>Research</h2></div>
-        <div class="topic-list compact-topics">
-          <article class="topic-item">
-            <h3>GPU memory systems</h3>
-            <div><p>UVM oversubscription, page-fault recovery, prefetching, migration, and device-side memory management.</p><p class="related-work"><a href="publications.html#safe">SAFE</a> · <a href="publications.html#ariadne">ARIADNE</a> · <a href="publications.html#reclaimx">ReclaimX</a></p></div>
-          </article>
-          <article class="topic-item">
-            <h3>LLM and MoE systems</h3>
-            <div><p>Efficient training for large language and Mixture-of-Experts models on heterogeneous CPU–GPU systems.</p><p class="related-work"><a href="publications.html#replayopt">ReplayOpt</a> · Current MoE research</p></div>
-          </article>
-          <article class="topic-item">
-            <h3>Scalable 3D Gaussian Splatting</h3>
-            <div><p>Systems support for scaling 3DGS training beyond conventional GPU-memory limits.</p><p class="related-work">Current 3DGS research</p></div>
-          </article>
-          <article class="topic-item">
-            <h3>Architecture and simulation</h3>
-            <div><p>GPU architecture, device-side memory-management mechanisms, full-system simulation, and system-level performance analysis.</p><p class="related-work"><a href="publications.html#reclaimx">ReclaimX</a> · <a href="publications.html#pnet-gem5">pNet-gem5</a></p></div>
-          </article>
+  <section class="section research-section" aria-labelledby="research-title">
+    <div class="container research-layout">
+      <div class="research-heading"><p class="section-kicker"><span>02</span> Research directions</p><h2 id="research-title">Connecting architecture<br>to AI systems.</h2><p>My work spans memory-management mechanisms, runtime execution, and the simulation infrastructure used to study them.</p><a class="text-link" href="research.html">Research overview <span aria-hidden="true">↗</span></a></div>
+      <div class="research-directions">
+        <article class="research-direction" data-area="memory"><span class="direction-number" aria-hidden="true">01 /</span><div><h3><a href="research.html#gpu-memory">GPU memory systems</a></h3><p>UVM oversubscription, page-fault recovery, prefetching, and device-side reclamation.</p><div class="direction-links"><a href="publications.html#safe">SAFE</a><a href="publications.html#ariadne">ARIADNE</a><a href="publications.html#reclaimx">ReclaimX</a></div></div></article>
+        <article class="research-direction" data-area="training"><span class="direction-number" aria-hidden="true">02 /</span><div><h3><a href="research.html#training-systems">LLM &amp; MoE training</a></h3><p>CPU offload, optimizer execution, SIMD, and overlapping computation with data movement.</p><div class="direction-links"><a href="publications.html#replayopt">ReplayOpt</a><a href="research.html#current-research">Current MoE research</a></div></div></article>
+        <article class="research-direction" data-area="graphics"><span class="direction-number" aria-hidden="true">03 /</span><div><h3><a href="research.html#scalable-3dgs">Scalable 3D Gaussian Splatting</a></h3><p>Training larger scenes by managing GPU memory and CPU–GPU data movement.</p><div class="direction-links"><a href="research.html#current-research">Current 3DGS research</a></div></div></article>
+        <article class="research-direction" data-area="architecture"><span class="direction-number" aria-hidden="true">04 /</span><div><h3><a href="research.html#architecture-simulation">Architecture &amp; simulation</a></h3><p>GPU architecture with Accel-Sim; full-system and networking studies with gem5.</p><div class="direction-links"><a href="publications.html#reclaimx">ReclaimX</a><a href="publications.html#pnet-gem5">pNet-gem5</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section background-section" aria-labelledby="background-title">
+    <div class="container">
+      <div class="section-heading"><div><p class="section-kicker"><span>03</span> Background</p><h2 id="background-title">Research in context.</h2></div></div>
+      <div class="background-grid">
+        <section id="education" class="education-panel" aria-labelledby="education-title">
+          <h3 class="subsection-title" id="education-title">Education &amp; affiliation</h3>
+          <div class="affiliation-note"><span class="small-label">Research group</span><a href="https://caslab-yonsei.github.io/" target="_blank" rel="noopener">CASLAB, Yonsei University <span aria-hidden="true">↗</span></a></div>
+          <ol class="education-timeline">
+            <li><p class="timeline-date">2019 — Present</p><h4>B.S.–M.S.–Ph.D. Integrated Course</h4><p>Electrical Engineering and Computer Science</p><strong>DGIST</strong></li>
+            <li><p class="timeline-date">2016 — 2020</p><h4>Bachelor of Convergence Engineering</h4><strong>DGIST</strong></li>
+          </ol>
+        </section>
+        <section class="news-panel" aria-labelledby="news-title">
+          <h3 class="subsection-title" id="news-title">Recent milestones</h3>
+          <ol class="news-stream">
+            <li><span class="news-year">2026</span><p>A machine-learning systems paper accepted to <strong>ASPLOS 2027</strong>.</p></li>
+            <li><span class="news-year">2026</span><p><a href="publications.html#reclaimx">ReclaimX</a> accepted to <strong>MICRO 2026</strong>.</p></li>
+            <li><span class="news-year">2026</span><p><a href="publications.html#replayopt">ReplayOpt</a> accepted for publication in <strong>IEEE CAL</strong>.</p></li>
+            <li><span class="news-year">2026</span><p><a href="publications.html#ariadne">ARIADNE</a> accepted to <strong>HPCA 2026</strong>.</p></li>
+            <li><span class="news-year">2025</span><p><a href="publications.html#safe">SAFE</a> and <a href="publications.html#pnet-gem5">pNet-gem5</a> accepted for publication in <strong>IEEE CAL</strong>.</p></li>
+          </ol>
+        </section>
+      </div>
+      <section class="expertise-section" id="skills" aria-labelledby="expertise-title">
+        <div class="expertise-heading"><h3 class="subsection-title" id="expertise-title">Tools behind the research</h3><p>NVIDIA GPU Driver · UVM · CPU–GPU Offloading · AVX2 / AVX-512 · Performance Profiling</p></div>
+        <div class="tech-brand-grid" aria-label="Tools and frameworks">
+          <div class="tech-brand-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="" width="32" height="32" loading="lazy" data-technology-logo><span>C++</span></div>
+          <div class="tech-brand-card"><img src="https://cdn.simpleicons.org/nvidia/76B900" alt="" width="32" height="32" loading="lazy" data-technology-logo><span>CUDA</span></div>
+          <div class="tech-brand-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" width="32" height="32" loading="lazy" data-technology-logo><span>Python</span></div>
+          <div class="tech-brand-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="" width="32" height="32" loading="lazy" data-technology-logo><span>Shell / Bash</span></div>
+          <div class="tech-brand-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" width="32" height="32" loading="lazy" data-technology-logo><span>PyTorch</span></div>
+          <div class="tech-brand-card"><img class="tech-logo-wide" src="https://raw.githubusercontent.com/deepspeedai/DeepSpeed/master/docs/assets/images/DeepSpeed_light_transparent.svg" alt="" width="54" height="32" loading="lazy" data-technology-logo><span>DeepSpeed</span></div>
+          <div class="tech-brand-card"><img src="https://cdn.simpleicons.org/nvidia/76B900" alt="" width="32" height="32" loading="lazy" data-technology-logo><span>Megatron-LM</span></div>
+          <div class="tech-brand-card"><img src="https://avatars.githubusercontent.com/u/106621677?v=4" alt="" width="32" height="32" loading="lazy" data-technology-logo><span>gsplat</span></div>
+          <div class="tech-brand-card"><img src="https://raw.githubusercontent.com/gem5/website/stable/assets/img/gem5logo/Color/noBackground/vertical/gem5ColorVert.png" alt="" width="32" height="38" loading="lazy" data-technology-logo><span>gem5</span></div>
+          <div class="tech-brand-card"><img class="tech-logo-wide" src="https://accel-sim.github.io/assets/img/accelsimlogo/logo-lightbg.svg" alt="" width="54" height="32" loading="lazy" data-technology-logo><span>Accel-Sim</span></div>
+          <div class="tech-brand-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="" width="32" height="32" loading="lazy" data-technology-logo><span>Linux</span></div>
         </div>
       </section>
-
-      <aside class="home-side-column">
-        <section class="home-side-section">
-          <div class="section-title compact-title"><span>News</span></div>
-          <div class="news-stream compact-news">
-            <div class="news-row"><span class="news-year">2026</span><p><strong>A machine-learning systems paper</strong> accepted to <strong class="venue-inline">ASPLOS 2027</strong>.</p></div>
-            <div class="news-row"><span class="news-year">2026</span><p><strong>ReclaimX</strong> accepted to <strong class="venue-inline">MICRO 2026</strong>.</p></div>
-            <div class="news-row"><span class="news-year">2026</span><p><strong>ReplayOpt</strong> accepted for publication in <strong class="venue-inline">IEEE CAL</strong>.</p></div>
-            <div class="news-row"><span class="news-year">2026</span><p><strong>ARIADNE</strong> accepted to <strong class="venue-inline">HPCA 2026</strong>.</p></div>
-            <div class="news-row"><span class="news-year">2025</span><p><strong>SAFE</strong> and <strong>pNet-gem5</strong> accepted for publication in <strong class="venue-inline">IEEE CAL</strong>.</p></div>
-          </div>
-        </section>
-
-        <section class="home-side-section" id="skills">
-          <div class="section-title compact-title"><span>Technical skills</span></div>
-          <div class="tech-brand-grid" aria-label="Tools and frameworks">
-            <div class="tech-brand-card" title="C++"><span class="tech-brand-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++ logo" loading="lazy"></span><span>C++</span></div>
-            <div class="tech-brand-card" title="CUDA"><span class="tech-brand-logo"><img src="https://cdn.simpleicons.org/nvidia/76B900" alt="NVIDIA logo" loading="lazy"></span><span>CUDA</span></div>
-            <div class="tech-brand-card" title="Python"><span class="tech-brand-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo" loading="lazy"></span><span>Python</span></div>
-            <div class="tech-brand-card" title="GNU Bash"><span class="tech-brand-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="GNU Bash logo" loading="lazy"></span><span>Shell / Bash</span></div>
-            <div class="tech-brand-card" title="PyTorch"><span class="tech-brand-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch logo" loading="lazy"></span><span>PyTorch</span></div>
-            <div class="tech-brand-card" title="DeepSpeed"><span class="tech-brand-logo tech-brand-logo-wide"><img src="https://raw.githubusercontent.com/deepspeedai/DeepSpeed/master/docs/assets/images/DeepSpeed_light_transparent.svg" alt="DeepSpeed logo" loading="lazy"></span><span>DeepSpeed</span></div>
-            <div class="tech-brand-card" title="Megatron-LM"><span class="tech-brand-logo"><img src="https://cdn.simpleicons.org/nvidia/76B900" alt="NVIDIA logo" loading="lazy"></span><span>Megatron-LM</span></div>
-            <div class="tech-brand-card" title="gsplat"><span class="tech-brand-logo"><img src="https://avatars.githubusercontent.com/u/106621677?v=4" alt="Nerfstudio logo" loading="lazy"></span><span>gsplat</span></div>
-            <div class="tech-brand-card" title="gem5"><span class="tech-brand-logo tech-brand-logo-gem5"><img src="https://raw.githubusercontent.com/gem5/website/stable/assets/img/gem5logo/Color/noBackground/vertical/gem5ColorVert.png" alt="gem5 color logo" loading="lazy"></span><span>gem5</span></div>
-            <div class="tech-brand-card" title="Accel-Sim"><span class="tech-brand-logo tech-brand-logo-wide"><img src="https://accel-sim.github.io/assets/img/accelsimlogo/logo-lightbg.svg" alt="Accel-Sim logo" loading="lazy"></span><span>Accel-Sim</span></div>
-            <div class="tech-brand-card" title="Linux"><span class="tech-brand-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux logo" loading="lazy"></span><span>Linux</span></div>
-          </div>
-          <div class="systems-expertise" aria-label="Systems expertise">
-            <span>GPU Architecture</span>
-            <span>NVIDIA GPU Driver</span>
-            <span>Unified Virtual Memory</span>
-            <span>CPU–GPU Offloading</span>
-            <span>AVX2 / AVX-512</span>
-            <span>LLM / MoE Training</span>
-            <span>3DGS Systems</span>
-            <span>Full-System Simulation</span>
-            <span>Performance Profiling</span>
-          </div>
-        </section>
-
-        <section class="home-side-section" id="education">
-          <div class="section-title compact-title"><span>Education</span></div>
-          <div class="compact-education">
-            <div><span>2019 – Present</span><p><strong>B.S.–M.S.–Ph.D. Integrated Course</strong><br>Electrical Engineering and Computer Science, DGIST</p></div>
-            <div><span>2016 – 2020</span><p><strong>Bachelor of Convergence Engineering</strong><br>DGIST</p></div>
-          </div>
-        </section>
-      </aside>
     </div>
   </section>
-
-  <section class="section contact-section">
-    <div class="container compact-width contact-line">
-      <div><span class="section-kicker">Contact</span><h2>st.bang@dgist.ac.kr</h2></div>
-      <a href="mailto:st.bang@dgist.ac.kr">Email →</a>
-    </div>
-  </section>
+  <section class="contact-section" aria-labelledby="contact-title"><div class="container contact-line"><div><p class="section-kicker">Contact</p><h2 id="contact-title">Let's talk systems.</h2><a class="contact-email" href="mailto:st.bang@dgist.ac.kr">st.bang@dgist.ac.kr <span aria-hidden="true">↗</span></a></div><div class="contact-profiles"><a href="https://github.com/st-bang97" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/stbang/" target="_blank" rel="noopener">LinkedIn</a><a href="https://orcid.org/0000-0002-2928-1403" target="_blank" rel="noopener">ORCID</a></div></div></section>
 </main>
-
-<footer class="site-footer"><div class="container"><span>© <span data-current-year></span> Seongtae Bang</span></div></footer>
-<script src="assets/js/publications.js"></script>
-<script src="assets/js/site.js"></script>
+<footer class="site-footer"><div class="container footer-row"><span>© <span data-current-year>2026</span> Seongtae Bang</span><span>GPU systems · Computer architecture</span></div></footer>
+<script src="assets/js/publications.js" defer></script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
