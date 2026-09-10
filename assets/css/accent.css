@@ -18,6 +18,36 @@
 .accent-training { color: var(--accent-rust); font-weight: 650; }
 .accent-graphics { color: var(--accent-plum); font-weight: 650; }
 
+/* A compact, visible record of recent top-tier systems work. */
+.hero-highlights {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px 13px;
+  margin: 18px 0 0;
+  padding: 10px 0;
+  border-top: 1px solid rgba(221, 213, 201, .9);
+  border-bottom: 1px solid rgba(221, 213, 201, .9);
+  font-size: .82rem;
+  line-height: 1.35;
+}
+.hero-highlights-label {
+  color: var(--soft);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.hero-highlights a {
+  color: #454038;
+  font-weight: 600;
+}
+.hero-highlights a:hover { color: var(--accent); }
+.hero-highlights .venue-inline {
+  margin-left: 3px;
+  font-weight: 750;
+}
+
 /* Research identity: one muted hue per research direction. */
 .research-signal:nth-child(1) { color: var(--accent); }
 .research-signal:nth-child(2) { color: var(--accent-teal); }
@@ -84,4 +114,6 @@
 @media (max-width: 680px) {
   .intro-note { padding-left: 11px; }
   .research-signal { white-space: normal; }
+  .hero-highlights { align-items: flex-start; gap: 7px 11px; }
+  .hero-highlights-label { flex-basis: 100%; }
 }
