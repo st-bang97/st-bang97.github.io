@@ -105,7 +105,7 @@
   const renderHomePublications = () => {
     const target = document.querySelector('#home-publications');
     if (!target || !window.PUBLICATIONS) return;
-    const order = ['reclaimx', 'replayopt', 'ariadne', 'safe'];
+    const order = ['reflow', 'reclaimx', 'replayopt', 'ariadne'];
     const papers = order.map(id => window.PUBLICATIONS.find(p => p.id === id)).filter(Boolean);
     target.innerHTML = papers.map(homePublicationCard).join('');
   };
