@@ -3,6 +3,12 @@ window.PUBLICATIONS = [
     id: 'reclaimx',
     homeTitle: 'ReclaimX',
     homeSummary: 'Device-side memory management for UVM oversubscription',
+    researchArea: 'memory',
+    outcome: {
+      value: '2.33×',
+      label: 'geometric-mean speedup',
+      context: '12 oversubscribed workloads · vs. baseline UVM'
+    },
     year: 2026,
     selected: true,
     venueBadge: 'MICRO',
@@ -29,6 +35,13 @@ window.PUBLICATIONS = [
     id: 'replayopt',
     homeTitle: 'ReplayOpt',
     homeSummary: 'Optimizer scheduling for CPU-offloaded LLM training',
+    researchArea: 'training',
+    outcome: {
+      prefix: 'up to',
+      value: '21.7%',
+      label: 'lower end-to-end step time',
+      context: 'CPU-offloaded training · without accuracy loss'
+    },
     year: 2026,
     selected: true,
     venueBadge: 'IEEE CAL',
@@ -56,6 +69,12 @@ window.PUBLICATIONS = [
     id: 'ariadne',
     homeTitle: 'ARIADNE',
     homeSummary: 'Adaptive UVM management under memory oversubscription',
+    researchArea: 'memory',
+    outcome: {
+      value: '5.0×',
+      label: 'average speedup',
+      context: '175% memory oversubscription · vs. prior method'
+    },
     year: 2026,
     selected: true,
     venueBadge: 'HPCA',
@@ -83,6 +102,7 @@ window.PUBLICATIONS = [
     id: 'pnet-gem5',
     homeTitle: 'pNet-gem5',
     homeSummary: 'Full-system simulation with high-performance networking',
+    researchArea: 'architecture',
     year: 2025,
     selected: false,
     venueBadge: 'IEEE CAL',
@@ -110,6 +130,12 @@ window.PUBLICATIONS = [
     id: 'safe',
     homeTitle: 'SAFE',
     homeSummary: 'Sharing-aware UVM prefetching',
+    researchArea: 'memory',
+    outcome: {
+      value: '3.6×',
+      label: 'average speedup',
+      context: 'Reported evaluation · vs. default UVM prefetcher'
+    },
     year: 2025,
     selected: true,
     venueBadge: 'IEEE CAL',
