@@ -1,5 +1,31 @@
 window.PUBLICATIONS = [
   {
+    id: 'reflow',
+    homeTitle: 'ReFlow',
+    homeSummary: 'Parallel CPU-offloaded LLM training via SIMD fusion and split-phase updates',
+    year: 2027,
+    selected: true,
+    venueBadge: 'ASPLOS',
+    venueShort: 'ASPLOS 2027',
+    venue: 'ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)',
+    status: 'Accepted to ASPLOS 2027',
+    title: 'ReFlow: Exposing Parallelism in CPU-Offloaded LLM Training via Register-Resident SIMD Fusion and Decoupled Update Scheduling',
+    authors: ['Seongtae Bang', 'Gyeongseo Park', 'Ki-Dong Kang', 'Hyunkyun Shin', 'Sungju Kim', 'Daehoon Kim'],
+    note: 'First author',
+    tags: ['LLM Training', 'CPU Offload', 'SIMD', 'Optimizer'],
+    summary: 'A CPU-offloaded LLM training framework that restructures the host optimizer path into a traffic-efficient, parallel CPU–GPU pipeline.',
+    figure: 'assets/images/papers/reflow-overview.svg',
+    figureAlt: 'Overview of ReFlow using CPU-centric BF16 gradients, register-resident FlashOpt, and split-phase Ready and Persist scheduling.',
+    details: {
+      problem: 'In CPU-offloaded LLM training, the host optimizer sits on the iteration boundary. ReFlow identifies the dominant bottleneck as serialized host-memory traffic from unnecessary tensor materialization, FP32 gradient inflation, and coupling of latency-critical BF16 parameters with FP32 optimizer-state persistence, rather than CPU arithmetic itself.',
+      idea: 'ReFlow combines FlashOpt, CPU-Centric Gradient, and Split-Phase Schedule. FlashOpt keeps optimizer intermediates register-resident, CPU-Centric Gradient transfers compact BF16 gradients and promotes them at the point of use, and Split-Phase Schedule generates next-step BF16 parameters first while deferring FP32-state persistence into CPU slack; when clipping is required, only the lightweight Ready path is replayed.',
+      result: 'Across B200 and A100 systems, ReFlow achieves up to 4× higher throughput than ZeRO-Infinity and 3× higher throughput than SuperOffload. On 8 B200 GPUs, it reaches 98% of ZeRO-3 throughput at 50B while preserving baseline training semantics under norm clipping.'
+    },
+    links: {
+      project: 'https://caslab-yonsei.github.io/publications/asplos27-sbang/'
+    }
+  },
+  {
     id: 'reclaimx',
     homeTitle: 'ReclaimX',
     homeSummary: 'Device-side memory management for UVM oversubscription',
