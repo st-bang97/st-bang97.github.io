@@ -3,21 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Publications by Seongtae Bang in GPU systems, computer architecture, memory management, and AI training systems.">
-  <title>Publications — Seongtae Bang</title>
+  <title>Publications | Seongtae Bang</title>
+  <meta name="description" content="Publications by Seongtae Bang in GPU systems, computer architecture, memory systems, and AI infrastructure.">
+  <link rel="canonical" href="https://st-bang97.github.io/publications.html">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/motion.css">
-  <link rel="stylesheet" href="assets/css/mobile.css" media="screen and (max-width: 820px)">
-  <link rel="stylesheet" href="assets/css/accent.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<header class="site-header"><div class="container nav"><a class="brand" href="index.html">Seongtae Bang</a><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button><nav class="nav-links"><a href="index.html">Home</a><a class="active" href="research.html">Research &amp; Publications</a></nav></div></header>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">Seongtae Bang</a><nav class="site-nav"><a href="index.html#research">Research</a><a aria-current="page" href="publications.html">Publications</a><a href="index.html#news">News</a><a href="mailto:st.bang@dgist.ac.kr">Contact</a></nav></div></header>
 <main>
-  <section class="page-hero"><div class="container"><span class="section-kicker">Research output</span><h1>Publications</h1><p>Click a publication to open or close its overview.</p></div></section>
-  <section class="section"><div class="container"><div id="all-publications" class="publications-list"></div></div></section>
+<section class="page-hero"><div class="container"><span class="section-kicker">Research &amp; Publications</span><h1>Publications</h1><p>GPU memory systems, heterogeneous CPU–GPU execution, AI training systems, and architecture/full-system simulation.</p></div></section>
+<section class="section"><div class="container pub-list">
+  <h2 class="pub-year-heading">2027</h2>
+  <article class="pub" id="reflow"><div class="pub-badges"><span class="venue-badge">ASPLOS 2027</span><span class="role-badge">First author</span></div><h3>ReFlow: Exposing Parallelism in CPU-Offloaded LLM Training via Register-Resident SIMD Fusion and Decoupled Update Scheduling</h3><p class="pub-authors"><strong>Seongtae Bang</strong>, Gyeongseo Park, Ki-Dong Kang, Hyunkyun Shin, Sungju Kim, Daehoon Kim</p><p class="pub-venue">ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), 2027</p><p class="pub-summary">A CPU-offloaded LLM training system that reduces host-memory traffic with register-resident SIMD fusion and overlaps host optimizer work with GPU execution through decoupled update scheduling.</p><p class="key-result">Up to 4× throughput over ZeRO-Infinity in the reported evaluation.</p><ul class="tags"><li>LLM Training</li><li>CPU Offload</li><li>SIMD</li><li>Optimizer</li></ul><div class="actions"><a href="https://caslab-yonsei.github.io/publications/asplos27-sbang/" target="_blank" rel="noopener">Project ↗</a></div></article>
+
+  <h2 class="pub-year-heading">2026</h2>
+  <article class="pub" id="reclaimx"><div class="pub-badges"><span class="venue-badge">MICRO 2026</span><span class="role-badge">First author</span></div><h3>ReclaimX: Device-Side Memory Reclamation via Stalled GPU Execution for UVM Oversubscription</h3><p class="pub-authors"><strong>Seongtae Bang</strong> et al.</p><p class="pub-venue">IEEE/ACM International Symposium on Microarchitecture (MICRO), 2026</p><p class="pub-summary">Device-side reclamation that uses fault-stalled GPU execution to reduce host-mediated migrations and restore useful compressed-resident data locally.</p><p class="key-result">2.33× geomean standalone speedup; 3.61× with prefetchers.</p><ul class="tags"><li>GPU Memory</li><li>UVM</li><li>Architecture</li><li>Accel-Sim</li></ul></article>
+
+  <article class="pub" id="replayopt"><div class="pub-badges"><span class="venue-badge">IEEE CAL 2026</span><span class="role-badge">First author</span></div><h3>ReplayOpt: Optimizer-State Replay to Resolve Critical-Path Bottlenecks in Offloaded Training</h3><p class="pub-authors"><strong>Seongtae Bang</strong>, Gyeongseo Park, Kyeonghyeon Ryu, Daehoon Kim</p><p class="pub-venue">IEEE Computer Architecture Letters, 2026</p><p class="pub-summary">Splits optimizer dispatch from deferred state persistence so GPU execution can resume before host-side optimizer-state writeback completes.</p><p class="key-result">Up to 21.7% shorter training step.</p><ul class="tags"><li>LLM Training</li><li>CPU Offload</li><li>Optimizer</li><li>SIMD</li></ul><div class="actions"><a href="https://doi.org/10.1109/LCA.2026.3676470" target="_blank" rel="noopener">DOI ↗</a><a href="https://caslab-yonsei.github.io/publications/cal26-sbang/" target="_blank" rel="noopener">Project ↗</a></div></article>
+
+  <article class="pub" id="ariadne"><div class="pub-badges"><span class="venue-badge">HPCA 2026</span></div><h3>ARIADNE: Adaptive UVM Management for Efficient GPU Memory Oversubscription</h3><p class="pub-authors">Hyunkyun Shin, <strong>Seongtae Bang</strong>, Hyungwon Park, Daehoon Kim</p><p class="pub-venue">IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2026</p><p class="pub-summary">Adaptive UVM management combining pipelined fault handling, runtime sharing behavior, and dynamic placement between GPU memory and zero-copy.</p><p class="key-result">5.0× average speedup at 175% memory oversubscription.</p><ul class="tags"><li>GPU Memory</li><li>NVIDIA GPU Driver</li><li>UVM</li><li>Oversubscription</li></ul><div class="actions"><a href="https://doi.org/10.1109/HPCA68181.2026.11408564" target="_blank" rel="noopener">DOI ↗</a><a href="https://zenodo.org/records/17852674" target="_blank" rel="noopener">Code ↗</a></div></article>
+
+  <h2 class="pub-year-heading">2025</h2>
+  <article class="pub" id="pnet-gem5"><div class="pub-badges"><span class="venue-badge">IEEE CAL 2025</span></div><h3>pNet-gem5: Full-System Simulation with High-Performance Networking Enabled by Parallel Network Packet Processing</h3><p class="pub-authors">Jongmin Shin, <strong>Seongtae Bang</strong>, Gyeongseo Park, Daehoon Kim</p><p class="pub-venue">IEEE Computer Architecture Letters, vol. 24, no. 2, pp. 193–196, 2025</p><p class="pub-summary">A full-system gem5 framework for multi-queue, parallel packet processing and realistic high-performance networking studies.</p><p class="key-result">Simulated networking up to 46 Gbps.</p><ul class="tags"><li>gem5</li><li>Full-System Simulation</li><li>Networking</li><li>Linux Driver</li></ul><div class="actions"><a href="https://doi.org/10.1109/LCA.2025.3577232" target="_blank" rel="noopener">DOI ↗</a><a href="https://github.com/caslab-yonsei/pNet-gem5" target="_blank" rel="noopener">Code ↗</a></div></article>
+
+  <article class="pub" id="safe"><div class="pub-badges"><span class="venue-badge">IEEE CAL 2025</span><span class="role-badge">Co-first author</span></div><h3>SAFE: Sharing-aware Prefetching for Efficient GPU Memory Management with Unified Virtual Memory</h3><p class="pub-authors">Hyunkyun Shin<sup>*</sup>, <strong>Seongtae Bang<sup>*</sup></strong>, Hyungwon Park, Daehoon Kim</p><p class="pub-venue">IEEE Computer Architecture Letters, vol. 24, no. 1, pp. 117–120, 2025</p><p class="pub-summary">A sharing-aware UVM prefetching mechanism that adapts prefetch aggressiveness to GPU memory-block sharing behavior.</p><p class="key-result">Up to 6.5× over the default UVM prefetcher.</p><ul class="tags"><li>GPU Memory</li><li>NVIDIA GPU Driver</li><li>UVM</li><li>Prefetching</li></ul><div class="actions"><a href="https://doi.org/10.1109/LCA.2025.3553143" target="_blank" rel="noopener">DOI ↗</a></div></article>
+  <p class="pub-venue"><sup>*</sup> Equal contribution.</p>
+</div></section>
 </main>
-<footer class="site-footer"><div class="container"><span>© <span data-current-year></span> Seongtae Bang</span></div></footer>
-<script src="assets/js/publications.js"></script><script src="assets/js/site.js"></script>
+<footer class="site-footer"><div class="container footer-inner"><span>© 2026 Seongtae Bang</span><span>Updated September 2026</span></div></footer>
 </body>
 </html>
