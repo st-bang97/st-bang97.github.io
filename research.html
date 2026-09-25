@@ -3,31 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research and publications of Seongtae Bang on efficient GPU servers, spanning GPU memory systems, heterogeneous CPU–GPU execution, architecture and full-system simulation, system software, and end-to-end AI training systems.">
-  <title>Research &amp; Publications — Seongtae Bang</title>
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/motion.css">
-  <link rel="stylesheet" href="assets/css/mobile.css" media="screen and (max-width: 820px)">
-  <link rel="stylesheet" href="assets/css/accent.css">
+  <title>Research | Seongtae Bang</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://st-bang97.github.io/#research">
+  <meta http-equiv="refresh" content="0; url=index.html#research">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
-<header class="site-header"><div class="container nav"><a class="brand" href="index.html">Seongtae Bang</a><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button><nav class="nav-links"><a href="index.html">Home</a><a class="active" href="research.html">Research &amp; Publications</a></nav></div></header>
-<main>
-  <section class="page-hero"><div class="container"><span class="section-kicker">Research &amp; Publications</span><h1>Building Efficient GPU Servers, from Architecture to Full Systems</h1></div></section>
-  <section class="section"><div class="container narrative-grid"><div class="narrative-label">Vision</div><div class="narrative-content">
-    <section class="narrative-block"><h2>Reducing memory, data-movement, and execution bottlenecks in GPU servers</h2><p>My research focuses on making GPU servers more efficient as memory capacity, data movement, and host-side execution increasingly limit large-scale AI workloads. Rather than working at a single layer, I address each bottleneck at the abstraction level where it arises—from architecture and full-system simulation to system software, optimized CPU/GPU kernels, and end-to-end training systems.</p></section>
-  </div></div></section>
-  <section class="section"><div class="container narrative-grid"><div class="narrative-label">Research</div><div class="narrative-content">
-    <section class="narrative-block"><h2>GPU memory systems</h2><p>I design memory-management mechanisms for GPU servers operating under memory pressure and oversubscription. My work covers prefetching, memory placement, migration, far-page-fault recovery, and device-side reclamation, with the goal of reducing host-mediated overheads and using GPU memory more effectively.</p><p class="related-work"><a href="publications.html#safe">SAFE</a> · <a href="publications.html#ariadne">ARIADNE</a> · <a href="publications.html#reclaimx">ReclaimX</a></p></section>
-    <section class="narrative-block"><h2>Heterogeneous CPU–GPU execution</h2><p>I study how CPU resources can contribute directly to GPU-centric workloads instead of serving only as overflow storage. In CPU-offloaded LLM training, I reduce host-memory traffic, restructure optimizer execution, and overlap CPU and GPU work so that host-side processing does not dominate the training critical path.</p><p class="related-work"><a href="publications.html#reflow">ReFlow</a> · <a href="publications.html#replayopt">ReplayOpt</a></p></section>
-    <section class="narrative-block"><h2>Workload-aware AI scaling</h2><p>I use workload-specific sparsity and locality to scale AI training beyond conventional GPU-memory limits. My current work exploits expert-routing behavior in Mixture-of-Experts models and view-local working sets in 3D Gaussian Splatting to decide what data must reside on the GPU, when it should move, and when CPU-side work can proceed independently.</p><p class="related-work">Current MoE research · Current 3DGS research</p></section>
-    <section class="narrative-block"><h2>Systems expertise across the stack</h2><p>I work across multiple independent abstraction levels and toolchains. My experience includes GPU architecture simulation with Accel-Sim, full-system simulation with gem5, NVIDIA GPU-driver and UVM development, SIMD-optimized CPU kernels, CUDA/PyTorch systems, and end-to-end server evaluation. I use these capabilities independently or together depending on where a system bottleneck is best addressed.</p><p class="related-work"><a href="publications.html#reclaimx">ReclaimX</a> · <a href="publications.html#ariadne">ARIADNE</a> · <a href="publications.html#pnet-gem5">pNet-gem5</a></p></section>
-  </div></div></section>
-  <section class="section"><div class="container narrative-grid"><div class="narrative-label">Current</div><div class="narrative-content"><ul class="clean-list soft-list current-research-list"><li><strong>ReFlow</strong> accepted to ASPLOS 2027.</li><li>Scaling Mixture-of-Experts training with routing-aware CPU offload.</li><li>Scaling 3D Gaussian Splatting beyond GPU-memory limits.</li></ul></div></div></section>
-  <section class="section"><div class="container"><div class="section-title section-title-row"><div><span>Selected work</span><h2>Publications</h2></div><a href="publications.html">Full list →</a></div><div id="selected-publications" class="publications-list"></div></div></section>
-</main>
-<footer class="site-footer"><div class="container"><span>© <span data-current-year></span> Seongtae Bang</span></div></footer>
-<script src="assets/js/publications.js"></script><script src="assets/js/site.js"></script>
-</body>
+<body><main class="container notice"><h1>Research moved</h1><p>The research overview is now on the <a href="index.html#research">home page</a>. See <a href="publications.html">Publications</a> for the full paper list.</p></main></body>
 </html>
