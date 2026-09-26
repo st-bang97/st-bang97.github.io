@@ -177,7 +177,7 @@
   var fold = window.innerHeight * 0.92;
   var groups = new Map();
   document.querySelectorAll(
-    '.section-head, .section-title, .card, .topic-item, .stack-title, .stack, .layer, ' +
+    '.section-head, .section-title, .research-thesis, .card, .topic-item, .stack-title, .stack, .layer, ' +
     '.side-section, .tech, .contact-line, .pub, .pub-year-label'
   ).forEach(function (el) {
     if (el.getBoundingClientRect().top < fold) return;  // already on screen
@@ -194,8 +194,14 @@
       entry.target.classList.add('is-in');
       revealer.unobserve(entry.target);
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.reveal').forEach(function (el) { revealer.observe(el); });
+
+  // At the very bottom of the page nothing can scroll further into view, so show what is left.
+  window.addEventListener('scroll', function () {
+    if (window.innerHeight + window.scrollY < document.documentElement.scrollHeight - 4) return;
+    document.querySelectorAll('.reveal:not(.is-in)').forEach(function (el) { el.classList.add('is-in'); });
+  }, { passive: true });
 
   // Speedup bars grow, and their numbers count up, when the chart comes into view.
   document.querySelectorAll('.results .chart').forEach(function (chart) {

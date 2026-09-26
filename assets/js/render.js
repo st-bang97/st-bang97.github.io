@@ -75,8 +75,9 @@
   function overviewText(paper) {
     var d = paper.details;
     return '<dl class="overview-text">' +
-      '<div><dt>Problem</dt><dd>' + esc(d.problem) + '</dd></div>' +
-      '<div><dt>Key idea</dt><dd>' + esc(d.idea) + '</dd></div>' +
+      '<div><dt>Prior work</dt><dd>' + esc(d.prior) + '</dd></div>' +
+      '<div><dt>Key insight</dt><dd>' + esc(d.insight) + '</dd></div>' +
+      '<div><dt>Approach</dt><dd>' + esc(d.approach) + '</dd></div>' +
       '<div><dt>Result</dt><dd>' + esc(d.result) + '</dd></div>' +
       '</dl>';
   }
@@ -138,13 +139,24 @@
       '<div class="overview pub-overview print-only">' +
       '<a class="pub-figure" href="' + esc(paper.figure) + '" target="_blank" rel="noopener">' +
       '<img src="' + esc(paper.figure) + '" alt="' + esc(paper.figureAlt) + '" width="760" height="420" loading="lazy"></a>' +
+      (paper.mechanism
+        ? '<a class="pub-figure" href="' + esc(paper.mechanism) + '" target="_blank" rel="noopener">' +
+          '<img src="' + esc(paper.mechanism) + '" alt="' + esc(paper.mechanismAlt) + '" width="760" height="420" loading="lazy"></a>'
+        : '') +
       overviewText(paper) +
       '</div></article>';
   }
 
-  function step(label, text, isResult) {
-    return '<li class="pd-step' + (isResult ? ' is-result' : '') + '">' +
+  function step(label, text, kind) {
+    return '<li class="pd-step' + (kind ? ' is-' + kind : '') + '">' +
       '<span class="pd-step-label">' + label + '</span><p>' + emphasize(text) + '</p></li>';
+  }
+
+  function figureBlock(src, alt, caption) {
+    return '<figure class="pd-fig"><figcaption class="pd-figcap">' + caption + '</figcaption>' +
+      '<a class="pd-figure" href="' + esc(src) + '" target="_blank" rel="noopener">' +
+      '<img src="' + esc(src) + '" alt="' + esc(alt) + '" width="760" height="420">' +
+      '<span class="pd-zoom">Open full-size figure</span></a></figure>';
   }
 
   /* Paper overview window (built in the browser only). */
@@ -155,13 +167,16 @@
       : '';
     return '<header class="pd-head">' + badges(paper) +
       '<h2 class="pd-title" id="pd-title">' + esc(paper.shortTitle) + '</h2>' +
+      '<p class="pd-lead">' + esc(paper.teaser) + '</p>' +
       '<p class="pd-fulltitle">' + esc(paper.title) + '</p>' +
       '<p class="pd-authors">' + authors(paper) + '</p></header>' +
-      '<a class="pd-figure" href="' + esc(paper.figure) + '" target="_blank" rel="noopener">' +
-      '<img src="' + esc(paper.figure) + '" alt="' + esc(paper.figureAlt) + '" width="760" height="420">' +
-      '<span class="pd-zoom">Open full-size figure</span></a>' +
+      figureBlock(paper.figure, paper.figureAlt, 'Key idea') +
       '<ol class="pd-flow">' +
-      step('Problem', d.problem) + step('Key idea', d.idea) + step('Result', d.result, true) +
+      step('Prior work', d.prior, 'prior') + step('Key insight', d.insight, 'key') +
+      '</ol>' +
+      (paper.mechanism ? figureBlock(paper.mechanism, paper.mechanismAlt, 'How it works') : '') +
+      '<ol class="pd-flow pd-flow-next">' +
+      step('Approach', d.approach) + step('Result', d.result, 'result') +
       '</ol>' +
       '<div class="pd-bottom">' +
       (paper.result ? chart(paper) : '<p class="key-result pd-key">' + esc(paper.keyResult) + '</p>') +
