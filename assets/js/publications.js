@@ -1,19 +1,55 @@
+/*
+ * Publication data: the single source of truth for every paper on the site.
+ *
+ * After editing, run `node tools/build.mjs` so the HTML also contains the
+ * rendered sections (for search engines, link previews, and readers without
+ * JavaScript). Browsers re-render from this file anyway, so a forgotten build
+ * never shows visitors stale data.
+ *
+ * Fields
+ *   id          anchor on publications.html (#id)
+ *   shortTitle  system name used on cards, badges, and the stack diagram
+ *   title       full paper title
+ *   authors     author list; "Seongtae Bang" is bold, and a First author or
+ *               Co-first author badge is added automatically
+ *   equal       optional; authors with equal contribution (marked with *)
+ *   year        venue year
+ *   venue       venue badge text, e.g. "HPCA"
+ *   venueShort  short venue label, e.g. "HPCA 2026"
+ *   citation    full venue line shown on publications.html
+ *   status      "published" or "to-appear"
+ *   thread      research thread color: memory | execution | training | arch
+ *   tags        keywords shown under the paper
+ *   selected    true = figure card in "Publications" on the home page
+ *   highlight   true = result card at the top of the home page (needs result)
+ *   teaser      one line for home cards
+ *   summary     one or two lines for publications.html
+ *   keyResult   headline number in one line
+ *   result      optional chart: { metric, bars: [{ label, value }] }, values
+ *               are speedups over a baseline of 1x
+ *   figure      overview figure (SVG, 760x420 viewBox)
+ *   details     problem / idea / result shown under "Overview"
+ *   links       any of: pdf, doi, code, slides, video, project
+ */
 window.PUBLICATIONS = [
   {
     id: 'reflow',
-    homeTitle: 'ReFlow',
-    homeSummary: 'Parallel CPU-offloaded LLM training via SIMD fusion and split-phase updates',
-    year: 2027,
-    selected: true,
-    venueBadge: 'ASPLOS',
-    venueShort: 'ASPLOS 2027',
-    venue: 'ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)',
-    status: 'Accepted to ASPLOS 2027',
+    shortTitle: 'ReFlow',
     title: 'ReFlow: Exposing Parallelism in CPU-Offloaded LLM Training via Register-Resident SIMD Fusion and Decoupled Update Scheduling',
     authors: ['Seongtae Bang', 'Gyeongseo Park', 'Ki-Dong Kang', 'Hyunkyun Shin', 'Sungju Kim', 'Daehoon Kim'],
-    note: 'First author',
+    year: 2027,
+    venue: 'ASPLOS',
+    venueShort: 'ASPLOS 2027',
+    citation: 'ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), Heraklion, Greece, 2027',
+    status: 'to-appear',
+    thread: 'execution',
     tags: ['LLM Training', 'CPU Offload', 'SIMD', 'Optimizer'],
+    selected: true,
+    highlight: true,
+    teaser: 'Parallel CPU-offloaded LLM training via SIMD fusion and split-phase updates.',
     summary: 'A CPU-offloaded LLM training framework that restructures the host optimizer path into a traffic-efficient, parallel CPU–GPU pipeline.',
+    keyResult: 'Up to 4× training throughput over ZeRO-Infinity',
+    result: { metric: 'Training throughput, up to', bars: [{ label: 'vs ZeRO-Infinity', value: 4 }, { label: 'vs SuperOffload', value: 3 }] },
     figure: 'assets/images/papers/reflow-overview.svg',
     figureAlt: 'Overview of ReFlow using CPU-centric BF16 gradients, register-resident FlashOpt, and split-phase Ready and Persist scheduling.',
     details: {
@@ -27,19 +63,22 @@ window.PUBLICATIONS = [
   },
   {
     id: 'reclaimx',
-    homeTitle: 'ReclaimX',
-    homeSummary: 'Device-side memory management for UVM oversubscription',
-    year: 2026,
-    selected: true,
-    venueBadge: 'MICRO',
-    venueShort: 'MICRO 2026',
-    venue: 'IEEE/ACM International Symposium on Microarchitecture (MICRO)',
-    status: 'Accepted to MICRO 2026',
+    shortTitle: 'ReclaimX',
     title: 'ReclaimX: Device-Side Memory Reclamation via Stalled GPU Execution for UVM Oversubscription',
     authors: ['Seongtae Bang', 'Hyunkyun Shin', 'Hyungwon Park', 'Minho Kim', 'Daehoon Kim'],
-    note: 'First author',
+    year: 2026,
+    venue: 'MICRO',
+    venueShort: 'MICRO 2026',
+    citation: 'IEEE/ACM International Symposium on Microarchitecture (MICRO), 2026',
+    status: 'to-appear',
+    thread: 'memory',
     tags: ['GPU Architecture', 'UVM', 'Memory Management', 'Accel-Sim'],
+    selected: true,
+    highlight: true,
+    teaser: 'Device-side memory reclamation for UVM oversubscription.',
     summary: 'A GPU-resident memory-management architecture that uses fault-stalled execution resources to reclaim memory during UVM oversubscription.',
+    keyResult: '2.33× geomean speedup over baseline UVM',
+    result: { metric: 'Geomean speedup over baseline UVM', bars: [{ label: 'ReclaimX', value: 2.33 }, { label: 'with prefetching', value: 3.61 }] },
     figure: 'assets/images/papers/reclaimx-overview.svg',
     figureAlt: 'Overview of ReclaimX device-side memory reclamation during a UVM far-page fault.',
     details: {
@@ -53,19 +92,21 @@ window.PUBLICATIONS = [
   },
   {
     id: 'replayopt',
-    homeTitle: 'ReplayOpt',
-    homeSummary: 'Optimizer scheduling for CPU-offloaded LLM training',
-    year: 2026,
-    selected: true,
-    venueBadge: 'IEEE CAL',
-    venueShort: 'IEEE Computer Architecture Letters (CAL), 2026',
-    venue: 'IEEE Computer Architecture Letters (CAL)',
-    status: 'Accepted for publication in IEEE Computer Architecture Letters (CAL)',
+    shortTitle: 'ReplayOpt',
     title: 'ReplayOpt: Optimizer-State Replay to Resolve Critical-Path Bottlenecks in Offloaded Training',
     authors: ['Seongtae Bang', 'Gyeongseo Park', 'Kyeonghyeon Ryu', 'Daehoon Kim'],
-    note: 'First author',
+    year: 2026,
+    venue: 'IEEE CAL',
+    venueShort: 'IEEE CAL 2026',
+    citation: 'IEEE Computer Architecture Letters, 2026',
+    status: 'published',
+    thread: 'execution',
     tags: ['LLM Training', 'CPU Offload', 'Optimizer', 'SIMD'],
+    selected: true,
+    highlight: false,
+    teaser: 'Optimizer scheduling for CPU-offloaded LLM training.',
     summary: 'An optimizer scheduling technique for CPU-offloaded LLM training that removes optimizer-state writeback from the training critical path.',
+    keyResult: 'Up to 21.7% shorter training step',
     figure: 'assets/images/papers/replayopt-overview.svg',
     figureAlt: 'Overview of ReplayOpt dispatching next-iteration low-precision parameters before replaying deferred high-precision optimizer state.',
     details: {
@@ -80,18 +121,22 @@ window.PUBLICATIONS = [
   },
   {
     id: 'ariadne',
-    homeTitle: 'ARIADNE',
-    homeSummary: 'Adaptive UVM management under memory oversubscription',
-    year: 2026,
-    selected: true,
-    venueBadge: 'HPCA',
-    venueShort: 'HPCA 2026',
-    venue: 'IEEE International Symposium on High-Performance Computer Architecture (HPCA)',
-    status: 'Accepted to HPCA 2026',
+    shortTitle: 'ARIADNE',
     title: 'ARIADNE: Adaptive UVM Management for Efficient GPU Memory Oversubscription',
     authors: ['Hyunkyun Shin', 'Seongtae Bang', 'Hyungwon Park', 'Daehoon Kim'],
+    year: 2026,
+    venue: 'HPCA',
+    venueShort: 'HPCA 2026',
+    citation: 'IEEE International Symposium on High-Performance Computer Architecture (HPCA), Sydney, Australia, 2026',
+    status: 'published',
+    thread: 'memory',
     tags: ['GPU Memory', 'NVIDIA GPU Driver', 'UVM', 'Oversubscription'],
+    selected: true,
+    highlight: true,
+    teaser: 'Adaptive UVM management under memory oversubscription.',
     summary: 'A runtime UVM management framework that adapts fault handling and memory placement to runtime sharing behavior under memory oversubscription.',
+    keyResult: '5.0× average speedup at 175% oversubscription',
+    result: { metric: 'Average speedup over prior state of the art', bars: [{ label: '130% oversub.', value: 1.9 }, { label: '175% oversub.', value: 5 }, { label: '300% oversub.', value: 4.8 }] },
     figure: 'assets/images/papers/ariadne-overview.svg',
     figureAlt: 'Overview of ARIADNE using pipelined fault handling, sharing degree, and adaptive GPU-memory versus zero-copy placement.',
     details: {
@@ -107,18 +152,21 @@ window.PUBLICATIONS = [
   },
   {
     id: 'pnet-gem5',
-    homeTitle: 'pNet-gem5',
-    homeSummary: 'Full-system simulation with high-performance networking',
-    year: 2025,
-    selected: false,
-    venueBadge: 'IEEE CAL',
-    venueShort: 'IEEE Computer Architecture Letters (CAL), 2025',
-    venue: 'IEEE Computer Architecture Letters (CAL)',
-    status: 'Accepted for publication in IEEE Computer Architecture Letters (CAL)',
+    shortTitle: 'pNet-gem5',
     title: 'pNet-gem5: Full-System Simulation with High-Performance Networking Enabled by Parallel Network Packet Processing',
     authors: ['Jongmin Shin', 'Seongtae Bang', 'Gyeongseo Park', 'Daehoon Kim'],
+    year: 2025,
+    venue: 'IEEE CAL',
+    venueShort: 'IEEE CAL 2025',
+    citation: 'IEEE Computer Architecture Letters, vol. 24, no. 2, pp. 193–196, 2025',
+    status: 'published',
+    thread: 'arch',
     tags: ['gem5', 'Full-System Simulation', 'High-Performance Networking', 'Linux Driver'],
+    selected: false,
+    highlight: false,
+    teaser: 'Full-system simulation with high-performance networking.',
     summary: 'A full-system gem5 framework for multi-queue, parallel packet processing and realistic high-performance networking studies, with public source code and execution examples.',
+    keyResult: 'Simulated networking up to 46 Gbps',
     figure: 'assets/images/papers/pnet-gem5-overview.svg',
     figureAlt: 'Overview of pNet-gem5 with a multi-queue NIC, MSI interrupts, and parallel packet processing across simulated CPU cores.',
     details: {
@@ -128,25 +176,29 @@ window.PUBLICATIONS = [
     },
     links: {
       doi: 'https://doi.org/10.1109/LCA.2025.3577232',
-      codeExamples: 'https://github.com/caslab-yonsei/pNet-gem5',
+      code: 'https://github.com/caslab-yonsei/pNet-gem5',
       project: 'https://caslab-yonsei.github.io/publications/cal25-jshin/'
     }
   },
   {
     id: 'safe',
-    homeTitle: 'SAFE',
-    homeSummary: 'Sharing-aware UVM prefetching',
-    year: 2025,
-    selected: true,
-    venueBadge: 'IEEE CAL',
-    venueShort: 'IEEE Computer Architecture Letters (CAL), 2025',
-    venue: 'IEEE Computer Architecture Letters (CAL)',
-    status: 'Accepted for publication in IEEE Computer Architecture Letters (CAL)',
+    shortTitle: 'SAFE',
     title: 'SAFE: Sharing-aware Prefetching for Efficient GPU Memory Management with Unified Virtual Memory',
     authors: ['Hyunkyun Shin', 'Seongtae Bang', 'Hyungwon Park', 'Daehoon Kim'],
-    note: 'Co-first author',
+    equal: ['Hyunkyun Shin', 'Seongtae Bang'],
+    year: 2025,
+    venue: 'IEEE CAL',
+    venueShort: 'IEEE CAL 2025',
+    citation: 'IEEE Computer Architecture Letters, vol. 24, no. 1, pp. 117–120, 2025',
+    status: 'published',
+    thread: 'memory',
     tags: ['GPU Memory', 'NVIDIA GPU Driver', 'UVM', 'Prefetching'],
+    selected: false,
+    highlight: false,
+    teaser: 'Sharing-aware UVM prefetching.',
     summary: 'A sharing-aware UVM prefetching mechanism that adapts prefetch behavior to GPU memory-block sharing patterns.',
+    keyResult: 'Up to 6.5× over the default UVM prefetcher',
+    result: { metric: 'Speedup over the default UVM prefetcher', bars: [{ label: 'average', value: 3.6 }, { label: 'best case', value: 6.5 }] },
     figure: 'assets/images/papers/safe-overview.svg',
     figureAlt: 'Overview of SAFE tracking memory-block sharing behavior and adapting UVM prefetch aggressiveness.',
     details: {
