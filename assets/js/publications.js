@@ -27,8 +27,8 @@
  *   keyResult   headline number in one line
  *   result      optional chart: { metric, bars: [{ label, value }] }, values
  *               are speedups over a baseline of 1x
- *   figure      key-idea figure (SVG, 760x420 viewBox), also the card image
- *   mechanism   how-it-works figure (SVG, 760x420), shown in the Overview window
+ *   figure      key-idea figure (SVG, 760x420 viewBox), first in the Overview window
+ *   mechanism   how-it-works figure (SVG, 760x420), the card image on the home page
  *   details     prior / insight / approach / result shown in the Overview window
  *   links       any of: pdf, doi, code, slides, video, project
  */

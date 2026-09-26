@@ -115,7 +115,7 @@
   function featuredCard(paper) {
     return '\n<article class="card t-' + esc(paper.thread) + '" id="card-' + esc(paper.id) + '">' +
       '<button class="card-figure" type="button" aria-haspopup="dialog" aria-label="' + esc(paper.shortTitle) + ' overview" data-overview="' + esc(paper.id) + '">' +
-      '<img src="' + esc(paper.figure) + '" alt="' + esc(paper.figureAlt) + '" width="760" height="420" loading="lazy"></button>' +
+      '<img src="' + esc(paper.mechanism || paper.figure) + '" alt="' + esc(paper.mechanism ? paper.mechanismAlt : paper.figureAlt) + '" width="760" height="420" loading="lazy"></button>' +
       '<div class="card-body">' + badges(paper) +
       '<h3 class="card-title">' + esc(paper.shortTitle) + '</h3>' +
       '<p class="card-teaser">' + esc(paper.teaser) + '</p>' +

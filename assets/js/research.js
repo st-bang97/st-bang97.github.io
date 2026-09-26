@@ -21,7 +21,11 @@ window.RESEARCH = {
     {
       name: 'CPU SIMD kernels',
       tools: 'C++, OpenMP, AVX2, AVX-512',
-      papers: ['replayopt', 'reflow']
+      papers: ['replayopt', 'reflow'],
+      ongoing: [
+        { name: 'MoE training', thread: 'training' },
+        { name: '3DGS training', thread: 'training' }
+      ]
     },
     {
       name: 'GPU driver & UVM runtime',
@@ -30,7 +34,7 @@ window.RESEARCH = {
     },
     {
       name: 'GPU microarchitecture',
-      tools: 'Accel-Sim',
+      tools: 'Accel-Sim, GPGPU-Sim',
       papers: ['reclaimx']
     },
     {
