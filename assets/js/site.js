@@ -172,6 +172,39 @@
 
   /* Scroll motion -------------------------------------------------------------- */
 
+  document.addEventListener('click', function (event) {
+    var toggle = event.target.closest('.cite-toggle');
+    if (toggle) {
+      var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+      if (!panel) return;
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      panel.hidden = open;
+      return;
+    }
+    var copy = event.target.closest('.cite-copy');
+    if (!copy) return;
+    var pre = copy.parentElement.querySelector('pre');
+    var label = copy.textContent;
+    function selectText() {
+      var range = document.createRange();
+      range.selectNodeContents(pre);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      copy.textContent = 'Selected: press Ctrl+C';
+    }
+    function copied() {
+      copy.textContent = 'Copied';
+      setTimeout(function () { copy.textContent = label; }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(pre.textContent).then(copied, selectText);
+    } else {
+      selectText();
+    }
+  });
+
   if (reduceMotion || !('IntersectionObserver' in window)) return;
 
   var fold = window.innerHeight * 0.92;
@@ -204,7 +237,7 @@
   }, { passive: true });
 
   // Speedup bars grow, and their numbers count up, when the chart comes into view.
-  document.querySelectorAll('.results .chart').forEach(function (chart) {
+  document.querySelectorAll('.card .chart').forEach(function (chart) {
     if (chart.getBoundingClientRect().top < window.innerHeight) {
       countUp(chart, 750);
       return;

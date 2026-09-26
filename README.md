@@ -42,7 +42,9 @@ Edit the profile text, Research Focus, News, Technical skills, and Education dir
 - **Paper moves from "to appear" to published:** set `status: 'published'`, complete `citation` (volume, pages), and add `links.doi`.
 - **Author-version PDF:** put it in `assets/papers/` and add `links.pdf: 'assets/papers/NAME.pdf'`. Add PDFs only for published papers whose copyright form allows it.
 - **Home page cards:** `selected: true` shows a paper as a figure card, in the order of the data file.
-- **Result charts:** `highlight: true` plus a `result` object shows a paper as a chart card under the profile. Values are speedups over a 1× baseline.
+- **Result charts:** a `result` object shows speedup bars on the paper's home card and in its Overview window. Values are speedups over a 1× baseline.
+- **Citations:** each paper's `bibtex` entry is shown by its "Cite" button on the publications page and in the Overview window.
+- **Logos:** the skill logos live in `assets/images/logos/` (copied from Devicon, Simple Icons, and each project's repository) so the page never depends on an outside image host.
 - **Stack diagram:** list paper ids under the layer they change in `assets/js/research.js`; the pill color follows the paper's `thread`.
 - **CV:** replace `assets/cv/seongtae-bang-cv.pdf` with the new PDF (same file name); the header, profile, and contact links already point to it.
 - **Google Scholar:** uncomment the Scholar line in the profile links of `index.html` and paste the profile URL.

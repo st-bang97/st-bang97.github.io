@@ -17,6 +17,8 @@
   <meta property="og:image:alt" content="Seongtae Bang, Ph.D. student at DGIST, with recent papers at ASPLOS 2027, MICRO 2026, and HPCA 2026.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
   <script type="application/ld+json">
   {
@@ -52,12 +54,12 @@
   <section class="hero" aria-labelledby="name">
     <div class="container hero-grid">
       <div>
-        <p class="eyebrow">Efficient GPU Servers · Architecture to Full Systems</p>
+        <p class="eyebrow">Efficient GPU servers, from architecture to full systems</p>
         <h1 id="name">Seongtae Bang</h1>
         <p class="hero-role">Ph.D. Student, DGIST · Member of <a href="https://caslab-yonsei.github.io/" target="_blank" rel="noopener">CASLAB@Yonsei</a></p>
         <p class="availability"><span class="availability-dot" aria-hidden="true"></span>Open to research internships and full-time roles in GPU systems and AI infrastructure, starting 2027.</p>
         <p class="lead">I build <span class="accent-training">efficient GPU servers</span> by reducing <span class="accent-memory">memory pressure and data movement</span> and exposing more <span class="accent-execution">CPU–GPU parallelism</span> in large-scale AI workloads.</p>
-        <p class="intro-note">I work across the system stack—from GPU architecture and full-system simulation to NVIDIA GPU driver/runtime development, optimized CPU/GPU kernels, and end-to-end AI training systems. My current research spans UVM oversubscription, CPU-offloaded LLM and MoE training, and scalable 3D Gaussian Splatting.</p>
+        <p class="intro-note">GPU memory and GPU cycles are the scarcest resources in an AI server. I find the data and work that do not need to occupy them, and restructure where and when that work runs so it proceeds alongside the GPU instead of stalling it.</p>
         <div class="hero-highlights" aria-label="Recent selected publications">
           <span class="hero-highlights-label">Recent work</span>
           <a href="publications.html#reflow">ReFlow <span class="venue-inline">ASPLOS 2027</span></a>
@@ -65,51 +67,45 @@
           <a href="publications.html#ariadne">ARIADNE <span class="venue-inline">HPCA 2026</span></a>
         </div>
         <ul class="signals" aria-label="Research areas">
-          <li class="signal t-memory"><span class="signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12v-2"/><path d="M12 18v-2"/><path d="M16 12v-2"/><path d="M16 18v-2"/><path d="M2 11h1.5"/><path d="M20 18v-2"/><path d="M20.5 11H22"/><path d="M4 18v-2"/><path d="M8 12v-2"/><path d="M8 18v-2"/><rect x="2" y="6" width="20" height="10" rx="2"/></svg></span>GPU Memory Systems</li>
-          <li class="signal t-execution"><span class="signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>CPU–GPU Execution</li>
-          <li class="signal t-training"><span class="signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></svg></span>AI Training Systems</li>
-          <li class="signal t-arch"><span class="signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></span>Architecture &amp; Simulation</li>
+          <li><a class="signal t-memory" href="#focus-memory"><span class="signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12v-2"/><path d="M12 18v-2"/><path d="M16 12v-2"/><path d="M16 18v-2"/><path d="M2 11h1.5"/><path d="M20 18v-2"/><path d="M20.5 11H22"/><path d="M4 18v-2"/><path d="M8 12v-2"/><path d="M8 18v-2"/><rect x="2" y="6" width="20" height="10" rx="2"/></svg></span>GPU Memory Systems</a></li>
+          <li><a class="signal t-execution" href="#focus-execution"><span class="signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>CPU–GPU Execution</a></li>
+          <li><a class="signal t-training" href="#focus-training"><span class="signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></svg></span>Workload-Aware AI Scaling</a></li>
+          <li><a class="signal t-arch" href="#focus-arch"><span class="signal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></span>Architecture to Full Systems</a></li>
         </ul>
         <div class="link-row">
           <a class="button primary" href="publications.html">Publications</a>
           <a class="button" href="assets/cv/seongtae-bang-cv.pdf">CV</a>
-          <a class="button" href="mailto:st.bang@dgist.ac.kr">Email</a>
           <!-- <a class="button" href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Google Scholar</a> -->
-          <a class="button" href="https://github.com/st-bang97" target="_blank" rel="noopener">GitHub</a>
-          <a class="button" href="https://orcid.org/0000-0002-2928-1403" target="_blank" rel="noopener">ORCID</a>
-          <a class="button" href="https://www.linkedin.com/in/stbang/" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="profile-links">
+            <a href="mailto:st.bang@dgist.ac.kr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a>
+            <a href="https://github.com/st-bang97" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub</a>
+            <a href="https://orcid.org/0000-0002-2928-1403" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM8.1 17.4H6.7V7.1h1.4v10.3zM7.4 6a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm3.1 1.1h3.8c3.6 0 5.2 2.6 5.2 5.2 0 2.8-2.2 5.2-5.2 5.2h-3.8V7.1zm1.4 1.3v7.7h2.3c3.2 0 3.9-2.4 3.9-3.8 0-2.3-1.5-3.9-3.9-3.9h-2.3z"/></svg>ORCID</a>
+            <a href="https://www.linkedin.com/in/stbang/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+          </span>
         </div>
       </div>
       <figure class="hero-photo">
         <img src="assets/images/profile.jpg" alt="Seongtae Bang" width="600" height="800">
       </figure>
     </div>
-    <div class="container results" aria-label="Recent results" data-region="highlights" data-sig="1qd2vda">
-<!-- region:highlights -->
-
-<article class="result t-execution"><div class="badges"><span class="venue-badge">ASPLOS</span><span class="badge-year">2027, to appear</span><span class="role-badge">First author</span></div><h3><a href="publications.html#reflow">ReFlow</a></h3><p class="result-teaser">Prior systems hide the slow CPU update; ReFlow removes its real cause, host-memory traffic.</p><figure class="chart" style="--one:20.0%"><figcaption>Training throughput, up to</figcaption><div class="bar-row"><span class="bar-label">vs ZeRO-Infinity</span><span class="bar-track"><span class="bar-fill" style="--w:80.0%"></span></span><span class="bar-value" data-value="4">4.0×</span></div><div class="bar-row"><span class="bar-label">vs SuperOffload</span><span class="bar-track"><span class="bar-fill" style="--w:60.0%"></span></span><span class="bar-value" data-value="3">3.0×</span></div><div class="bar-row bar-axis" aria-hidden="true"><span></span><span class="bar-track"><span class="bar-one">1× baseline</span></span><span></span></div></figure></article>
-<article class="result t-memory"><div class="badges"><span class="venue-badge">MICRO</span><span class="badge-year">2026, to appear</span><span class="role-badge">First author</span></div><h3><a href="publications.html#reclaimx">ReclaimX</a></h3><p class="result-teaser">A page fault stalls a GPU core anyway, so ReclaimX lets that stalled core free GPU memory.</p><figure class="chart" style="--one:20.0%"><figcaption>Geomean speedup over baseline UVM</figcaption><div class="bar-row"><span class="bar-label">ReclaimX</span><span class="bar-track"><span class="bar-fill" style="--w:46.6%"></span></span><span class="bar-value" data-value="2.33">2.33×</span></div><div class="bar-row"><span class="bar-label">with prefetching</span><span class="bar-track"><span class="bar-fill" style="--w:72.2%"></span></span><span class="bar-value" data-value="3.61">3.61×</span></div><div class="bar-row bar-axis" aria-hidden="true"><span></span><span class="bar-track"><span class="bar-one">1× baseline</span></span><span></span></div></figure></article>
-<article class="result t-memory"><div class="badges"><span class="venue-badge">HPCA</span><span class="badge-year">2026</span></div><h3><a href="publications.html#ariadne">ARIADNE</a></h3><p class="result-teaser">Fast UVM under heavy memory oversubscription from the driver alone, with no hardware, compiler, or application changes.</p><figure class="chart" style="--one:20.0%"><figcaption>Average speedup over prior state of the art</figcaption><div class="bar-row"><span class="bar-label">130% oversub.</span><span class="bar-track"><span class="bar-fill" style="--w:38.0%"></span></span><span class="bar-value" data-value="1.9">1.9×</span></div><div class="bar-row"><span class="bar-label">175% oversub.</span><span class="bar-track"><span class="bar-fill" style="--w:100.0%"></span></span><span class="bar-value" data-value="5">5.0×</span></div><div class="bar-row"><span class="bar-label">300% oversub.</span><span class="bar-track"><span class="bar-fill" style="--w:96.0%"></span></span><span class="bar-value" data-value="4.8">4.8×</span></div><div class="bar-row bar-axis" aria-hidden="true"><span></span><span class="bar-track"><span class="bar-one">1× baseline</span></span><span></span></div></figure></article>
-<!-- /region:highlights -->
-    </div>
-    <p class="container results-note">ASPLOS, MICRO, and HPCA are top-tier conferences in computer architecture.</p>
   </section>
 
   <section class="section" id="publications" aria-labelledby="publications-title">
     <div class="container">
       <div class="section-head">
         <h2 id="publications-title">Publications</h2>
-        <a href="publications.html">Full list →</a>
+        <a href="publications.html">Full list</a>
       </div>
-      <div class="cards" data-region="featured-publications" data-sig="oqmdhx">
+      <div class="cards" data-region="featured-publications" data-sig="16vujer">
 <!-- region:featured-publications -->
 
-<article class="card t-execution" id="card-reflow"><button class="card-figure" type="button" aria-haspopup="dialog" aria-label="ReFlow overview" data-overview="reflow"><img src="assets/images/papers/reflow-mechanism.svg" alt="Timeline comparison of ZeRO-Infinity and ReFlow. In ZeRO-Infinity the GPU idles while the CPU runs a serialized optimizer update; in ReFlow the update overlaps the backward pass and FP32 state is persisted during the next forward pass." width="760" height="420" loading="lazy"></button><div class="card-body"><div class="badges"><span class="venue-badge">ASPLOS</span><span class="badge-year">2027, to appear</span><span class="role-badge">First author</span></div><h3 class="card-title">ReFlow</h3><p class="card-teaser">Prior systems hide the slow CPU update; ReFlow removes its real cause, host-memory traffic.</p><p class="key-result">Up to 4× training throughput over ZeRO-Infinity</p><ul class="tags"><li>LLM Training</li><li>CPU Offload</li><li>SIMD</li><li>Optimizer</li></ul><div class="actions"><button class="toggle" type="button" aria-haspopup="dialog" data-overview="reflow">Overview</button><a href="https://caslab-yonsei.github.io/publications/asplos27-sbang/" target="_blank" rel="noopener">Project</a></div></div></article>
-<article class="card t-memory" id="card-reclaimx"><button class="card-figure" type="button" aria-haspopup="dialog" aria-label="ReclaimX overview" data-overview="reclaimx"><img src="assets/images/papers/reclaimx-mechanism.svg" alt="Side-by-side comparison. In baseline UVM a far-page fault stalls a TPC while the host driver picks victims at 2 MB granularity; in ReclaimX the stalled TPC compresses a cold 64 KB block inside HBM or evicts it, and later accesses are restored locally on the GPU." width="760" height="420" loading="lazy"></button><div class="card-body"><div class="badges"><span class="venue-badge">MICRO</span><span class="badge-year">2026, to appear</span><span class="role-badge">First author</span></div><h3 class="card-title">ReclaimX</h3><p class="card-teaser">A page fault stalls a GPU core anyway, so ReclaimX lets that stalled core free GPU memory.</p><p class="key-result">2.33× geomean speedup over baseline UVM</p><ul class="tags"><li>GPU Architecture</li><li>UVM</li><li>Memory Management</li><li>Accel-Sim</li></ul><div class="actions"><button class="toggle" type="button" aria-haspopup="dialog" data-overview="reclaimx">Overview</button><a href="https://caslab-yonsei.github.io/publications/micro26-sbang/" target="_blank" rel="noopener">Project</a></div></div></article>
+<article class="card t-execution" id="card-reflow"><button class="card-figure" type="button" aria-haspopup="dialog" aria-label="ReFlow overview" data-overview="reflow"><img src="assets/images/papers/reflow-mechanism.svg" alt="Timeline comparison of ZeRO-Infinity and ReFlow. In ZeRO-Infinity the GPU idles while the CPU runs a serialized optimizer update; in ReFlow the update overlaps the backward pass and FP32 state is persisted during the next forward pass." width="760" height="420" loading="lazy"></button><div class="card-body"><div class="badges"><span class="venue-badge">ASPLOS</span><span class="badge-year">2027, to appear</span><span class="role-badge">First author</span></div><h3 class="card-title">ReFlow</h3><p class="card-teaser">Prior systems hide the slow CPU update; ReFlow removes its real cause, host-memory traffic.</p><figure class="chart" style="--one:20.0%"><figcaption>Training throughput, up to</figcaption><div class="bar-row"><span class="bar-label">vs ZeRO-Infinity</span><span class="bar-track"><span class="bar-fill" style="--w:80.0%"></span></span><span class="bar-value" data-value="4">4.0×</span></div><div class="bar-row"><span class="bar-label">vs SuperOffload</span><span class="bar-track"><span class="bar-fill" style="--w:60.0%"></span></span><span class="bar-value" data-value="3">3.0×</span></div><div class="bar-row bar-axis" aria-hidden="true"><span></span><span class="bar-track"><span class="bar-one">1× baseline</span></span><span></span></div></figure><p class="paper-note">Public artifact · Upstream pull request to DeepSpeed in preparation</p><ul class="tags"><li>LLM Training</li><li>CPU Offload</li><li>SIMD</li><li>Optimizer</li></ul><div class="actions"><button class="toggle" type="button" aria-haspopup="dialog" data-overview="reflow">Overview</button><a href="https://github.com/aeasplos/DeepSpeedExample_reflow/tree/main/training/DeepSpeed-Reflow" target="_blank" rel="noopener">Artifact</a><a href="https://caslab-yonsei.github.io/publications/asplos27-sbang/" target="_blank" rel="noopener">Project</a></div></div></article>
+<article class="card t-memory" id="card-reclaimx"><button class="card-figure" type="button" aria-haspopup="dialog" aria-label="ReclaimX overview" data-overview="reclaimx"><img src="assets/images/papers/reclaimx-mechanism.svg" alt="Side-by-side comparison. In baseline UVM a far-page fault stalls a TPC while the host driver picks victims at 2 MB granularity; in ReclaimX the stalled TPC compresses a cold 64 KB block inside HBM or evicts it, and later accesses are restored locally on the GPU." width="760" height="420" loading="lazy"></button><div class="card-body"><div class="badges"><span class="venue-badge">MICRO</span><span class="badge-year">2026, to appear</span><span class="role-badge">First author</span></div><h3 class="card-title">ReclaimX</h3><p class="card-teaser">A page fault stalls a GPU core anyway, so ReclaimX lets that stalled core free GPU memory.</p><figure class="chart" style="--one:20.0%"><figcaption>Geomean speedup over baseline UVM</figcaption><div class="bar-row"><span class="bar-label">ReclaimX</span><span class="bar-track"><span class="bar-fill" style="--w:46.6%"></span></span><span class="bar-value" data-value="2.33">2.33×</span></div><div class="bar-row"><span class="bar-label">with prefetching</span><span class="bar-track"><span class="bar-fill" style="--w:72.2%"></span></span><span class="bar-value" data-value="3.61">3.61×</span></div><div class="bar-row bar-axis" aria-hidden="true"><span></span><span class="bar-track"><span class="bar-one">1× baseline</span></span><span></span></div></figure><ul class="tags"><li>GPU Architecture</li><li>UVM</li><li>Memory Management</li><li>Accel-Sim</li></ul><div class="actions"><button class="toggle" type="button" aria-haspopup="dialog" data-overview="reclaimx">Overview</button><a href="https://caslab-yonsei.github.io/publications/micro26-sbang/" target="_blank" rel="noopener">Project</a></div></div></article>
 <article class="card t-execution" id="card-replayopt"><button class="card-figure" type="button" aria-haspopup="dialog" aria-label="ReplayOpt overview" data-overview="replayopt"><img src="assets/images/papers/replayopt-mechanism.svg" alt="Timeline comparison of conventional CPU-offloaded training and ReplayOpt. Conventionally the GPU idles until the CPU finishes the update and FP32 write-back; ReplayOpt dispatches BF16 parameters first and replays the FP32 write-back during the next GPU compute interval." width="760" height="420" loading="lazy"></button><div class="card-body"><div class="badges"><span class="venue-badge">IEEE CAL</span><span class="badge-year">2026</span><span class="role-badge">First author</span></div><h3 class="card-title">ReplayOpt</h3><p class="card-teaser">The GPU needs only the new parameters to continue, so ReplayOpt sends those first and writes the FP32 state later.</p><p class="key-result">Up to 21.7% shorter training step</p><ul class="tags"><li>LLM Training</li><li>CPU Offload</li><li>Optimizer</li><li>SIMD</li></ul><div class="actions"><button class="toggle" type="button" aria-haspopup="dialog" data-overview="replayopt">Overview</button><a href="https://doi.org/10.1109/LCA.2026.3676470" target="_blank" rel="noopener">DOI</a><a href="https://caslab-yonsei.github.io/publications/cal26-sbang/" target="_blank" rel="noopener">Project</a></div></div></article>
-<article class="card t-memory" id="card-ariadne"><button class="card-figure" type="button" aria-haspopup="dialog" aria-label="ARIADNE overview" data-overview="ariadne"><img src="assets/images/papers/ariadne-mechanism.svg" alt="Three mechanisms inside NVIDIA’s open-source UVM driver: pipelined fault handling, a runtime Sharing Degree metric, and adaptive placement between GPU memory and zero-copy, with average speedups of 1.9x, 5.0x, and 4.8x at 130%, 175%, and 300% oversubscription." width="760" height="420" loading="lazy"></button><div class="card-body"><div class="badges"><span class="venue-badge">HPCA</span><span class="badge-year">2026</span></div><h3 class="card-title">ARIADNE</h3><p class="card-teaser">Fast UVM under heavy memory oversubscription from the driver alone, with no hardware, compiler, or application changes.</p><p class="key-result">5.0× average speedup at 175% oversubscription</p><ul class="tags"><li>GPU Memory</li><li>NVIDIA GPU Driver</li><li>UVM</li><li>Oversubscription</li></ul><div class="actions"><button class="toggle" type="button" aria-haspopup="dialog" data-overview="ariadne">Overview</button><a href="https://doi.org/10.1109/HPCA68181.2026.11408564" target="_blank" rel="noopener">DOI</a><a href="https://zenodo.org/records/17852674" target="_blank" rel="noopener">Code</a><a href="https://caslab-yonsei.github.io/publications/hpca26-hshin/" target="_blank" rel="noopener">Project</a></div></div></article>
+<article class="card t-memory" id="card-ariadne"><button class="card-figure" type="button" aria-haspopup="dialog" aria-label="ARIADNE overview" data-overview="ariadne"><img src="assets/images/papers/ariadne-mechanism.svg" alt="Three mechanisms inside NVIDIA’s open-source UVM driver: pipelined fault handling, a runtime Sharing Degree metric, and adaptive placement between GPU memory and zero-copy, with average speedups of 1.9x, 5.0x, and 4.8x at 130%, 175%, and 300% oversubscription." width="760" height="420" loading="lazy"></button><div class="card-body"><div class="badges"><span class="venue-badge">HPCA</span><span class="badge-year">2026</span></div><h3 class="card-title">ARIADNE</h3><p class="card-teaser">Fast UVM under heavy memory oversubscription from the driver alone, with no hardware, compiler, or application changes.</p><figure class="chart" style="--one:20.0%"><figcaption>Average speedup over prior state of the art</figcaption><div class="bar-row"><span class="bar-label">130% oversub.</span><span class="bar-track"><span class="bar-fill" style="--w:38.0%"></span></span><span class="bar-value" data-value="1.9">1.9×</span></div><div class="bar-row"><span class="bar-label">175% oversub.</span><span class="bar-track"><span class="bar-fill" style="--w:100.0%"></span></span><span class="bar-value" data-value="5">5.0×</span></div><div class="bar-row"><span class="bar-label">300% oversub.</span><span class="bar-track"><span class="bar-fill" style="--w:96.0%"></span></span><span class="bar-value" data-value="4.8">4.8×</span></div><div class="bar-row bar-axis" aria-hidden="true"><span></span><span class="bar-track"><span class="bar-one">1× baseline</span></span><span></span></div></figure><ul class="tags"><li>GPU Memory</li><li>NVIDIA GPU Driver</li><li>UVM</li><li>Oversubscription</li></ul><div class="actions"><button class="toggle" type="button" aria-haspopup="dialog" data-overview="ariadne">Overview</button><a href="https://doi.org/10.1109/HPCA68181.2026.11408564" target="_blank" rel="noopener">DOI</a><a href="https://zenodo.org/records/17852674" target="_blank" rel="noopener">Artifact</a><a href="https://caslab-yonsei.github.io/publications/hpca26-hshin/" target="_blank" rel="noopener">Project</a></div></div></article>
 <!-- /region:featured-publications -->
       </div>
+      <p class="results-note">ASPLOS, MICRO, and HPCA are top-tier conferences in computer architecture.</p>
     </div>
   </section>
 
@@ -117,9 +113,8 @@
     <div class="container home-grid">
       <div class="main-col">
         <h2 class="section-title" id="research-title">Research Focus</h2>
-        <p class="research-thesis">GPU memory and GPU cycles are the scarcest resources in an AI server. I find the data and work that do not need to occupy them, and restructure where and when that work runs so it proceeds alongside the GPU instead of stalling it.</p>
         <div class="topic-list">
-          <article class="topic-item t-memory">
+          <article class="topic-item t-memory" id="focus-memory">
             <h3>GPU memory systems</h3>
             <div>
               <p class="topic-concept">Use the signals the GPU already produces to manage its memory.</p>
@@ -127,15 +122,15 @@
               <p class="related-work"><a href="publications.html#safe">SAFE</a> · <a href="publications.html#ariadne">ARIADNE</a> · <a href="publications.html#reclaimx">ReclaimX</a></p>
             </div>
           </article>
-          <article class="topic-item t-execution">
+          <article class="topic-item t-execution" id="focus-execution">
             <h3>Heterogeneous CPU–GPU execution</h3>
             <div>
               <p class="topic-concept">The CPU is a partner in GPU training, not a slow fallback.</p>
-              <p class="topic-direction">Offloading systems usually treat the CPU path as slow and try to hide it. I measure where host-side time actually goes, which is mostly memory traffic rather than arithmetic, and reorder work by when its results are needed, so CPU work overlaps GPU compute instead of extending every step.</p>
-              <p class="related-work"><a href="publications.html#reflow">ReFlow</a> · <a href="publications.html#replayopt">ReplayOpt</a></p>
+              <p class="topic-direction">Offloading systems usually treat the CPU path as slow and try to hide it. I measure where host-side time actually goes, which is mostly memory traffic rather than arithmetic, and reorder work by when its results are needed, so CPU work overlaps GPU compute instead of extending every step. I am now applying this to Mixture-of-Experts and 3D Gaussian Splatting training.</p>
+              <p class="related-work"><a href="publications.html#reflow">ReFlow</a> · <a href="publications.html#replayopt">ReplayOpt</a> · Current MoE research · Current 3DGS research</p>
             </div>
           </article>
-          <article class="topic-item t-training">
+          <article class="topic-item t-training" id="focus-training">
             <h3>Workload-aware AI scaling</h3>
             <div>
               <p class="topic-concept">Only the active part of a model needs to live in GPU memory.</p>
@@ -143,7 +138,7 @@
               <p class="related-work">Current MoE research · Current 3DGS research</p>
             </div>
           </article>
-          <article class="topic-item t-arch">
+          <article class="topic-item t-arch" id="focus-arch">
             <h3>Architecture to full systems</h3>
             <div>
               <p class="topic-concept">Solve each bottleneck at the layer where it lives.</p>
@@ -154,15 +149,15 @@
         </div>
 
         <h3 class="stack-title">Across the system stack</h3>
-        <div data-region="research-stack" data-sig="rizf8t">
+        <div data-region="research-stack" data-sig="dh4pou">
 <!-- region:research-stack -->
-<div class="stack"><p class="stack-end">Software</p><ol class="layers" aria-label="System stack, from software to hardware">
+<div class="stack"><ol class="layers" aria-label="System stack, from training frameworks down to GPU microarchitecture and full-system simulation">
 <li class="layer" style="--depth:0"><strong class="layer-name">AI training systems</strong><span class="layer-tools">PyTorch, DeepSpeed, Megatron-LM, gsplat</span><div class="layer-papers"><a class="pill t-execution" href="publications.html#replayopt">ReplayOpt<small>IEEE CAL 2026</small></a><a class="pill t-execution" href="publications.html#reflow">ReFlow<small>ASPLOS 2027</small></a><span class="pill pill-ongoing t-training">MoE training<small>ongoing</small></span><span class="pill pill-ongoing t-training">3DGS training<small>ongoing</small></span></div></li>
 <li class="layer" style="--depth:1"><strong class="layer-name">CPU SIMD kernels</strong><span class="layer-tools">C++, OpenMP, AVX2, AVX-512</span><div class="layer-papers"><a class="pill t-execution" href="publications.html#replayopt">ReplayOpt<small>IEEE CAL 2026</small></a><a class="pill t-execution" href="publications.html#reflow">ReFlow<small>ASPLOS 2027</small></a><span class="pill pill-ongoing t-training">MoE training<small>ongoing</small></span><span class="pill pill-ongoing t-training">3DGS training<small>ongoing</small></span></div></li>
 <li class="layer" style="--depth:2"><strong class="layer-name">GPU driver &amp; UVM runtime</strong><span class="layer-tools">NVIDIA open-source GPU driver, CUDA</span><div class="layer-papers"><a class="pill t-memory" href="publications.html#safe">SAFE<small>IEEE CAL 2025</small></a><a class="pill t-memory" href="publications.html#ariadne">ARIADNE<small>HPCA 2026</small></a></div></li>
 <li class="layer" style="--depth:3"><strong class="layer-name">GPU microarchitecture</strong><span class="layer-tools">Accel-Sim, GPGPU-Sim</span><div class="layer-papers"><a class="pill t-memory" href="publications.html#reclaimx">ReclaimX<small>MICRO 2026</small></a></div></li>
 <li class="layer" style="--depth:4"><strong class="layer-name">Full-system simulation</strong><span class="layer-tools">gem5, Linux network driver</span><div class="layer-papers"><a class="pill t-arch" href="publications.html#pnet-gem5">pNet-gem5<small>IEEE CAL 2025</small></a></div></li>
-</ol><p class="stack-end">Hardware</p></div>
+</ol></div>
 <!-- /region:research-stack -->
         </div>
       </div>
@@ -182,38 +177,24 @@
         <section class="side-section" id="skills" aria-labelledby="skills-title">
           <h2 class="side-title" id="skills-title">Technical skills</h2>
           <div class="tech-grid" aria-label="Tools and frameworks">
-                    <div class="tech"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="" loading="lazy"></span>C++</div>
-                    <div class="tech"><span class="tech-logo"><img src="https://cdn.simpleicons.org/nvidia/76B900" alt="" loading="lazy"></span>CUDA</div>
-                    <div class="tech"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" loading="lazy"></span>Python</div>
-                    <div class="tech"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="" loading="lazy"></span>Shell / Bash</div>
-                    <div class="tech"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" loading="lazy"></span>PyTorch</div>
-                    <div class="tech"><span class="tech-logo tech-logo-wide"><img src="https://raw.githubusercontent.com/deepspeedai/DeepSpeed/master/docs/assets/images/DeepSpeed_light_transparent.svg" alt="" loading="lazy"></span>DeepSpeed</div>
-                    <div class="tech"><span class="tech-logo"><img src="https://cdn.simpleicons.org/nvidia/76B900" alt="" loading="lazy"></span>Megatron-LM</div>
-                    <div class="tech"><span class="tech-logo"><img src="https://avatars.githubusercontent.com/u/106621677?v=4" alt="" loading="lazy"></span>gsplat</div>
-                    <div class="tech"><span class="tech-logo tech-logo-gem5"><img src="https://raw.githubusercontent.com/gem5/website/stable/assets/img/gem5logo/Color/noBackground/vertical/gem5ColorVert.png" alt="" loading="lazy"></span>gem5</div>
-                    <div class="tech"><span class="tech-logo tech-logo-wide"><img src="https://accel-sim.github.io/assets/img/accelsimlogo/logo-lightbg.svg" alt="" loading="lazy"></span>Accel-Sim</div>
-                    <div class="tech"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="" loading="lazy"></span>Linux</div>
+                    <div class="tech"><span class="tech-logo"><img src="assets/images/logos/cplusplus.svg" alt="" loading="lazy"></span>C++</div>
+                    <div class="tech"><span class="tech-logo"><img src="assets/images/logos/nvidia.svg" alt="" loading="lazy"></span>CUDA</div>
+                    <div class="tech"><span class="tech-logo"><img src="assets/images/logos/python.svg" alt="" loading="lazy"></span>Python</div>
+                    <div class="tech"><span class="tech-logo"><img src="assets/images/logos/bash.svg" alt="" loading="lazy"></span>Shell / Bash</div>
+                    <div class="tech"><span class="tech-logo"><img src="assets/images/logos/pytorch.svg" alt="" loading="lazy"></span>PyTorch</div>
+                    <div class="tech"><span class="tech-logo tech-logo-wide"><img src="assets/images/logos/deepspeed.svg" alt="" loading="lazy"></span>DeepSpeed</div>
+                    <div class="tech"><span class="tech-logo"><img src="assets/images/logos/nvidia.svg" alt="" loading="lazy"></span>Megatron-LM</div>
+                    <div class="tech"><span class="tech-logo"><img src="assets/images/logos/gsplat.png" alt="" loading="lazy"></span>gsplat</div>
+                    <div class="tech"><span class="tech-logo tech-logo-gem5"><img src="assets/images/logos/gem5.png" alt="" loading="lazy"></span>gem5</div>
+                    <div class="tech"><span class="tech-logo tech-logo-wide"><img src="assets/images/logos/accelsim.svg" alt="" loading="lazy"></span>Accel-Sim</div>
+                    <div class="tech"><span class="tech-logo"><img src="assets/images/logos/linux.png" alt="" loading="lazy"></span>Linux</div>
                   </div>
-                  <div class="expertise" aria-label="Systems expertise">
-                    <span>GPU Architecture</span>
-                    <span>NVIDIA GPU Driver</span>
-            <span>Linux Kernel Drivers</span>
-                    <span>Unified Virtual Memory</span>
-                    <span>CPU–GPU Offloading</span>
-                    <span>AVX2 / AVX-512</span>
-            <span>OpenMP Memory Traffic Analysis</span>
-                    <span>LLM / MoE Training</span>
-            <span>TP/PP/DP/EP Parallelism</span>
-            <span>DeepSpeed / Megatron-LM Internals</span>
-                    <span>3DGS Systems</span>
-                    <span>Full-System Simulation</span>
-                    <span>Performance Profiling</span>
-            <span>Nsight Systems</span>
-            <span>Nsight Compute</span>
-            <span>perf</span>
-            <span>NVIDIA nvCOMP</span>
-            <span>Intel IAA</span>
-                  </div>
+                  <div class="skill-groups" aria-label="Systems expertise">
+            <div class="skill-group"><h3>GPU systems</h3><div class="expertise"><span>GPU Architecture</span><span>NVIDIA GPU Driver</span><span>Linux Kernel Drivers</span><span>Unified Virtual Memory</span><span>NVIDIA nvCOMP</span></div></div>
+            <div class="skill-group"><h3>AI training</h3><div class="expertise"><span>LLM / MoE Training</span><span>TP/PP/DP/EP Parallelism</span><span>DeepSpeed / Megatron-LM Internals</span><span>CPU–GPU Offloading</span><span>3DGS Systems</span></div></div>
+            <div class="skill-group"><h3>CPU and performance</h3><div class="expertise"><span>AVX2 / AVX-512</span><span>OpenMP Memory Traffic Analysis</span><span>Intel IAA</span><span>Performance Profiling</span><span>Nsight Systems</span><span>Nsight Compute</span><span>perf</span></div></div>
+            <div class="skill-group"><h3>Simulation</h3><div class="expertise"><span>GPGPU-Sim / Accel-Sim</span><span>Full-System Simulation</span></div></div>
+          </div>
         </section>
 
         <section class="side-section" id="education" aria-labelledby="education-title">
@@ -231,8 +212,8 @@
     <div class="container compact-width contact-line">
       <div><span class="section-kicker">Contact</span><h2>st.bang@dgist.ac.kr</h2></div>
       <div class="contact-links">
-        <a href="assets/cv/seongtae-bang-cv.pdf">CV →</a>
-        <a href="mailto:st.bang@dgist.ac.kr">Email →</a>
+        <a href="assets/cv/seongtae-bang-cv.pdf">CV</a>
+        <a href="mailto:st.bang@dgist.ac.kr">Email</a>
       </div>
     </div>
   </section>

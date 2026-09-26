@@ -21,16 +21,17 @@
  *   thread      research thread color: memory | execution | training | arch
  *   tags        keywords shown under the paper
  *   selected    true = figure card in "Publications" on the home page
- *   highlight   true = result card at the top of the home page (needs result)
  *   teaser      one line for home cards
  *   summary     one or two lines for publications.html
  *   keyResult   headline number in one line
- *   result      optional chart: { metric, bars: [{ label, value }] }, values
- *               are speedups over a baseline of 1x
+ *   result      optional chart on the home card and in the Overview window:
+ *               { metric, bars: [{ label, value }] }, speedups over a 1x baseline
  *   figure      key-idea figure (SVG, 760x420 viewBox), first in the Overview window
  *   mechanism   how-it-works figure (SVG, 760x420), the card image on the home page
  *   details     prior / insight / approach / result shown in the Overview window
- *   links       any of: pdf, doi, code, slides, video, project
+ *   note        optional status line (artifact, upstream contribution)
+ *   bibtex      BibTeX entry behind the "Cite" button
+ *   links       any of: pdf, doi, artifact, code, slides, video, project
  */
 window.PUBLICATIONS = [
   {
@@ -46,7 +47,6 @@ window.PUBLICATIONS = [
     thread: 'execution',
     tags: ['LLM Training', 'CPU Offload', 'SIMD', 'Optimizer'],
     selected: true,
-    highlight: true,
     teaser: 'Prior systems hide the slow CPU update; ReFlow removes its real cause, host-memory traffic.',
     summary: 'Prior CPU-offloaded training treats the host optimizer as slow compute and hides it. ReFlow shows the delay comes from host-memory traffic and removes it, reaching GPU-resident speed while the optimizer stays fully offloaded.',
     keyResult: 'Up to 4× training throughput over ZeRO-Infinity',
@@ -61,7 +61,10 @@ window.PUBLICATIONS = [
       approach: 'Instead of hiding the host path, ReFlow fixes it. Intermediates stay in CPU registers, gradients cross PCIe in compact BF16, and the parameters the GPU needs next are produced first while the FP32 state is written later, off the critical path.',
       result: 'The optimizer stays fully offloaded and training stays identical, yet throughput matches GPU-resident ZeRO-3 (681 vs. 682 TFLOPS per GPU on OPT-30B with 4 B200 GPUs): up to 4× ZeRO-Infinity and 3× SuperOffload, with models up to 95B on 8 B200 GPUs.',
     },
+    bibtex: '@inproceedings{bang2027reflow,\n  title     = {{ReFlow}: Exposing Parallelism in {CPU}-Offloaded {LLM} Training via Register-Resident {SIMD} Fusion and Decoupled Update Scheduling},\n  author    = {Bang, Seongtae and Park, Gyeongseo and Kang, Ki-Dong and Shin, Hyunkyun and Kim, Sungju and Kim, Daehoon},\n  booktitle = {Proceedings of the 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1 (ASPLOS \'27)},\n  address   = {Heraklion, Greece},\n  year      = {2027},\n  note      = {To appear}\n}',
+    note: 'Public artifact · Upstream pull request to DeepSpeed in preparation',
     links: {
+      artifact: 'https://github.com/aeasplos/DeepSpeedExample_reflow/tree/main/training/DeepSpeed-Reflow',
       project: 'https://caslab-yonsei.github.io/publications/asplos27-sbang/'
     }
   },
@@ -78,7 +81,6 @@ window.PUBLICATIONS = [
     thread: 'memory',
     tags: ['GPU Architecture', 'UVM', 'Memory Management', 'Accel-Sim'],
     selected: true,
-    highlight: true,
     teaser: 'A page fault stalls a GPU core anyway, so ReclaimX lets that stalled core free GPU memory.',
     summary: 'Prior UVM work frees GPU memory from the host after a fault has stalled the GPU. ReclaimX lets the stalled GPU cores do the reclamation themselves: earlier, at finer granularity, and without taking compute from running work.',
     keyResult: '2.33× geomean speedup over baseline UVM',
@@ -93,6 +95,7 @@ window.PUBLICATIONS = [
       approach: 'ReclaimX turns fault-stalled TPCs into memory reclaimers. Relief starts on the device immediately, at the 64 KB granularity of the demand; cold, compressible blocks stay compressed inside HBM and are restored locally instead of round-tripping through the host. No compute is reserved and no running core is throttled.',
       result: '2.33× geomean speedup over baseline UVM across 12 workloads, and up to 3.61× with state-of-the-art prefetchers with 90.6% fewer far-page faults. Even an idealized host-controlled version reaches only 90–94% of ReclaimX, showing that running reclamation on the device is what matters.',
     },
+    bibtex: '@inproceedings{bang2026reclaimx,\n  title     = {{ReclaimX}: Device-Side Memory Reclamation via Stalled {GPU} Execution for {UVM} Oversubscription},\n  author    = {Bang, Seongtae and Shin, Hyunkyun and Park, Hyungwon and Kim, Minho and Kim, Daehoon},\n  booktitle = {Proceedings of the IEEE/ACM International Symposium on Microarchitecture (MICRO)},\n  year      = {2026},\n  note      = {To appear}\n}',
     links: {
       project: 'https://caslab-yonsei.github.io/publications/micro26-sbang/'
     }
@@ -110,7 +113,6 @@ window.PUBLICATIONS = [
     thread: 'execution',
     tags: ['LLM Training', 'CPU Offload', 'Optimizer', 'SIMD'],
     selected: true,
-    highlight: false,
     teaser: 'The GPU needs only the new parameters to continue, so ReplayOpt sends those first and writes the FP32 state later.',
     summary: 'Offloaded optimizers finish the whole update, including the FP32 write-back, before the GPU can continue. ReplayOpt reorders the step by deadline so only the parameters the GPU needs stay on the critical path.',
     keyResult: 'Up to 21.7% shorter training step',
@@ -124,6 +126,7 @@ window.PUBLICATIONS = [
       approach: 'ReplayOpt splits the step by deadline: dispatch computes and sends the next-step parameters first so the GPU resumes at once, and replay reconstructs and persists the deferred FP32 state while the GPU computes.',
       result: 'CPU-side optimizer time drops by up to 55.2% and end-to-end step time by up to 21.7%, without accuracy loss. This deadline-aware view later grew into ReFlow.',
     },
+    bibtex: '@article{bang2026replayopt,\n  title   = {{ReplayOpt}: Optimizer-State Replay to Resolve Critical-Path Bottlenecks in Offloaded Training},\n  author  = {Bang, Seongtae and Park, Gyeongseo and Ryu, Kyeonghyeon and Kim, Daehoon},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {25},\n  number  = {1},\n  pages   = {142--145},\n  year    = {2026},\n  doi     = {10.1109/LCA.2026.3676470}\n}',
     links: {
       doi: 'https://doi.org/10.1109/LCA.2026.3676470',
       project: 'https://caslab-yonsei.github.io/publications/cal26-sbang/'
@@ -142,7 +145,6 @@ window.PUBLICATIONS = [
     thread: 'memory',
     tags: ['GPU Memory', 'NVIDIA GPU Driver', 'UVM', 'Oversubscription'],
     selected: true,
-    highlight: true,
     teaser: 'Fast UVM under heavy memory oversubscription from the driver alone, with no hardware, compiler, or application changes.',
     summary: 'Prior fixes for UVM oversubscription help little or require hardware and compiler changes. ARIADNE decides at runtime, inside the driver, which regions to migrate and which to read in place, so any existing GPU binary runs fast.',
     keyResult: '5.0× average speedup at 175% oversubscription',
@@ -157,9 +159,10 @@ window.PUBLICATIONS = [
       approach: 'ARIADNE keeps UVM’s abstraction and changes only the driver: it places each region in GPU memory or zero-copy according to its live sharing behavior and pipelines fault handling to hide migration latency, so even closed-source binaries benefit without recompilation.',
       result: 'Average speedups of 1.9×, 5.0×, and 4.8× over a state-of-the-art method at 130%, 175%, and 300% oversubscription, while preventing thrashing and scaling near-linearly.',
     },
+    bibtex: '@inproceedings{shin2026ariadne,\n  title     = {{ARIADNE}: Adaptive {UVM} Management for Efficient {GPU} Memory Oversubscription},\n  author    = {Shin, Hyunkyun and Bang, Seongtae and Park, Hyungwon and Kim, Daehoon},\n  booktitle = {2026 IEEE International Symposium on High Performance Computer Architecture (HPCA)},\n  address   = {Sydney, Australia},\n  pages     = {1--15},\n  year      = {2026},\n  doi       = {10.1109/HPCA68181.2026.11408564}\n}',
     links: {
       doi: 'https://doi.org/10.1109/HPCA68181.2026.11408564',
-      code: 'https://zenodo.org/records/17852674',
+      artifact: 'https://zenodo.org/records/17852674',
       project: 'https://caslab-yonsei.github.io/publications/hpca26-hshin/'
     }
   },
@@ -176,7 +179,6 @@ window.PUBLICATIONS = [
     thread: 'arch',
     tags: ['gem5', 'Full-System Simulation', 'High-Performance Networking', 'Linux Driver'],
     selected: false,
-    highlight: false,
     teaser: 'gem5 can now simulate servers the way modern NICs work: many queues, each served by its own core, at up to 46 Gbps.',
     summary: 'Prior gem5 networking models a single-queue NIC limited to a few Gbps, and the DPDK-based alternative covers only userspace networking. pNet-gem5 models multi-queue NICs with per-queue interrupts, so kernel-networked servers can be simulated at tens of Gbps.',
     keyResult: 'Simulated networking up to 46 Gbps',
@@ -190,6 +192,7 @@ window.PUBLICATIONS = [
       approach: 'pNet-gem5 adds multiple hardware queues and Message Signaled Interrupts so each queue maps to a dedicated core, and decouples packet distribution and scheduling from the NIC logic so researchers can plug in their own policies.',
       result: 'Kernel-networked servers can now be simulated at up to 46 Gbps instead of a few Gbps, in line with today’s tens-of-Gbps networks. The source code and execution examples are public.',
     },
+    bibtex: '@article{shin2025pnetgem5,\n  title   = {{pNet-gem5}: Full-System Simulation with High-Performance Networking Enabled by Parallel Network Packet Processing},\n  author  = {Shin, Jongmin and Bang, Seongtae and Park, Gyeongseo and Kim, Daehoon},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {24},\n  number  = {2},\n  pages   = {193--196},\n  year    = {2025},\n  doi     = {10.1109/LCA.2025.3577232}\n}',
     links: {
       doi: 'https://doi.org/10.1109/LCA.2025.3577232',
       code: 'https://github.com/caslab-yonsei/pNet-gem5',
@@ -210,7 +213,6 @@ window.PUBLICATIONS = [
     thread: 'memory',
     tags: ['GPU Memory', 'NVIDIA GPU Driver', 'UVM', 'Prefetching'],
     selected: false,
-    highlight: false,
     teaser: 'How widely a memory block is shared across SMs predicts whether prefetching it pays off; SAFE prefetches accordingly.',
     summary: 'Prior UVM prefetching applies one setting everywhere and struggles with irregular workloads. SAFE uses a signal the GPU already has, how many SMs share each block, to prefetch aggressively only where it pays off.',
     keyResult: 'Up to 6.5× over the default UVM prefetcher',
@@ -225,6 +227,7 @@ window.PUBLICATIONS = [
       approach: 'SAFE reads each block’s sharing status from the GPU’s existing unified TLBs and chooses a prefetch setting per block, with no hardware changes and negligible overhead.',
       result: 'Up to 6.5× faster than the default UVM prefetcher on predominantly irregular workloads, and 3.6× faster on average.',
     },
+    bibtex: '@article{shin2025safe,\n  title   = {{SAFE}: Sharing-Aware Prefetching for Efficient {GPU} Memory Management with Unified Virtual Memory},\n  author  = {Shin, Hyunkyun and Bang, Seongtae and Park, Hyungwon and Kim, Daehoon},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {24},\n  number  = {1},\n  pages   = {117--120},\n  year    = {2025},\n  doi     = {10.1109/LCA.2025.3553143}\n}',
     links: {
       doi: 'https://doi.org/10.1109/LCA.2025.3553143',
       project: 'https://caslab-yonsei.github.io/publications/cal25-hshin/'

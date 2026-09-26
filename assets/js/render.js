@@ -6,8 +6,8 @@
   'use strict';
 
   var SELF = 'Seongtae Bang';
-  var LINK_ORDER = ['pdf', 'doi', 'code', 'slides', 'video', 'project'];
-  var LINK_LABELS = { pdf: 'PDF', doi: 'DOI', code: 'Code', slides: 'Slides', video: 'Talk', project: 'Project' };
+  var LINK_ORDER = ['pdf', 'doi', 'artifact', 'code', 'slides', 'video', 'project'];
+  var LINK_LABELS = { pdf: 'PDF', doi: 'DOI', artifact: 'Artifact', code: 'Code', slides: 'Slides', video: 'Talk', project: 'Project' };
 
   function esc(value) {
     return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) {
@@ -63,6 +63,24 @@
     }).join('');
   }
 
+  function note(paper) {
+    return paper.note ? '<p class="paper-note">' + esc(paper.note) + '</p>' : '';
+  }
+
+  function citeButton(paper, scope) {
+    return paper.bibtex
+      ? '<button class="cite-toggle" type="button" aria-expanded="false" aria-controls="' + scope + 'cite-' + esc(paper.id) + '">Cite</button>'
+      : '';
+  }
+
+  function citePanel(paper, scope) {
+    return paper.bibtex
+      ? '<div class="cite-panel" id="' + scope + 'cite-' + esc(paper.id) + '" hidden>' +
+        '<pre>' + esc(paper.bibtex) + '</pre>' +
+        '<button class="cite-copy" type="button">Copy BibTeX</button></div>'
+      : '';
+  }
+
   function overviewButton(paper) {
     return '<button class="toggle" type="button" aria-haspopup="dialog" data-overview="' + esc(paper.id) + '">Overview</button>';
   }
@@ -102,15 +120,6 @@
       '</figure>';
   }
 
-  /* Home: result cards for the headline papers. */
-  function highlightCard(paper) {
-    return '\n<article class="result t-' + esc(paper.thread) + '">' + badges(paper) +
-      '<h3><a href="publications.html#' + esc(paper.id) + '">' + esc(paper.shortTitle) + '</a></h3>' +
-      '<p class="result-teaser">' + esc(paper.teaser) + '</p>' +
-      chart(paper) +
-      '</article>';
-  }
-
   /* Home: figure card for a selected paper. */
   function featuredCard(paper) {
     return '\n<article class="card t-' + esc(paper.thread) + '" id="card-' + esc(paper.id) + '">' +
@@ -119,7 +128,8 @@
       '<div class="card-body">' + badges(paper) +
       '<h3 class="card-title">' + esc(paper.shortTitle) + '</h3>' +
       '<p class="card-teaser">' + esc(paper.teaser) + '</p>' +
-      '<p class="key-result">' + esc(paper.keyResult) + '</p>' +
+      (paper.result ? chart(paper) : '<p class="key-result">' + esc(paper.keyResult) + '</p>') +
+      note(paper) +
       tags(paper) +
       '<div class="actions">' + overviewButton(paper) + links(paper) + '</div>' +
       '</div></article>';
@@ -134,8 +144,10 @@
       '<p class="pub-venue">' + esc(paper.citation) + '</p>' +
       '<p class="pub-summary">' + esc(paper.summary) + '</p>' +
       '<p class="key-result">' + esc(paper.keyResult) + '</p>' +
+      note(paper) +
       tags(paper) +
-      '<div class="actions">' + overviewButton(paper) + links(paper) + '</div>' +
+      '<div class="actions">' + overviewButton(paper) + links(paper) + citeButton(paper, '') + '</div>' +
+      citePanel(paper, '') +
       '<div class="overview pub-overview print-only">' +
       '<a class="pub-figure" href="' + esc(paper.figure) + '" target="_blank" rel="noopener">' +
       '<img src="' + esc(paper.figure) + '" alt="' + esc(paper.figureAlt) + '" width="760" height="420" loading="lazy"></a>' +
@@ -180,7 +192,8 @@
       '</ol>' +
       '<div class="pd-bottom">' +
       (paper.result ? chart(paper) : '<p class="key-result pd-key">' + esc(paper.keyResult) + '</p>') +
-      '<div class="pd-meta">' + tags(paper) + '<div class="actions">' + links(paper) + entry + '</div></div>' +
+      '<div class="pd-meta">' + note(paper) + tags(paper) + '<div class="actions">' + links(paper) + entry + citeButton(paper, 'pd-') + '</div>' +
+      citePanel(paper, 'pd-') + '</div>' +
       '</div>';
   }
 
@@ -218,9 +231,8 @@
         '<div class="layer-papers">' + pills.join('') + '</div></li>';
     }).join('');
     return '<div class="stack">' +
-      '<p class="stack-end">Software</p>' +
-      '<ol class="layers" aria-label="System stack, from software to hardware">' + layers + '\n</ol>' +
-      '<p class="stack-end">Hardware</p></div>\n';
+      '<ol class="layers" aria-label="System stack, from training frameworks down to GPU microarchitecture and full-system simulation">' +
+      layers + '\n</ol></div>\n';
   }
 
   function hash(text) {
@@ -230,9 +242,6 @@
   }
 
   var regions = {
-    'highlights': function (data) {
-      return data.papers.filter(function (p) { return p.highlight && p.result; }).map(highlightCard).join('') + '\n';
-    },
     'featured-publications': function (data) {
       return data.papers.filter(function (p) { return p.selected; }).map(featuredCard).join('') + '\n';
     },
