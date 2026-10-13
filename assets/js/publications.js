@@ -62,9 +62,9 @@ window.PUBLICATIONS = [
       result: 'The optimizer stays fully offloaded and training stays identical, yet throughput matches GPU-resident ZeRO-3 (681 vs. 682 TFLOPS per GPU on OPT-30B with 4 B200 GPUs): up to 4× ZeRO-Infinity and 3× SuperOffload, with models up to 95B on 8 B200 GPUs.',
     },
     bibtex: '@inproceedings{bang2027reflow,\n  title     = {{ReFlow}: Exposing Parallelism in {CPU}-Offloaded {LLM} Training via Register-Resident {SIMD} Fusion and Decoupled Update Scheduling},\n  author    = {Bang, Seongtae and Park, Gyeongseo and Kang, Ki-Dong and Shin, Hyunkyun and Kim, Sungju and Kim, Daehoon},\n  booktitle = {Proceedings of the 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1 (ASPLOS \'27)},\n  address   = {Heraklion, Greece},\n  year      = {2027},\n  note      = {To appear}\n}',
-    note: 'Public artifact · Upstream pull request to DeepSpeed in preparation',
+    note: 'Public code · Upstream pull request to DeepSpeed in preparation',
     links: {
-      artifact: 'https://github.com/aeasplos/DeepSpeedExample_reflow/tree/main/training/DeepSpeed-Reflow',
+      code: 'https://github.com/aeasplos/DeepSpeedExample_reflow/tree/main/training/DeepSpeed-Reflow',
       project: 'https://caslab-yonsei.github.io/publications/asplos27-sbang/'
     }
   },
@@ -97,6 +97,7 @@ window.PUBLICATIONS = [
     },
     bibtex: '@inproceedings{bang2026reclaimx,\n  title     = {{ReclaimX}: Device-Side Memory Reclamation via Stalled {GPU} Execution for {UVM} Oversubscription},\n  author    = {Bang, Seongtae and Shin, Hyunkyun and Park, Hyungwon and Kim, Minho and Kim, Daehoon},\n  booktitle = {Proceedings of the IEEE/ACM International Symposium on Microarchitecture (MICRO)},\n  year      = {2026},\n  note      = {To appear}\n}',
     links: {
+      code: 'https://github.com/st-bang97/ReclaimX_MICRO2026',
       project: 'https://caslab-yonsei.github.io/publications/micro26-sbang/'
     }
   },
@@ -162,7 +163,7 @@ window.PUBLICATIONS = [
     bibtex: '@inproceedings{shin2026ariadne,\n  title     = {{ARIADNE}: Adaptive {UVM} Management for Efficient {GPU} Memory Oversubscription},\n  author    = {Shin, Hyunkyun and Bang, Seongtae and Park, Hyungwon and Kim, Daehoon},\n  booktitle = {2026 IEEE International Symposium on High Performance Computer Architecture (HPCA)},\n  address   = {Sydney, Australia},\n  pages     = {1--15},\n  year      = {2026},\n  doi       = {10.1109/HPCA68181.2026.11408564}\n}',
     links: {
       doi: 'https://doi.org/10.1109/HPCA68181.2026.11408564',
-      artifact: 'https://zenodo.org/records/17852674',
+      code: 'https://github.com/st-bang97/ARIADNE_HPCA26',
       project: 'https://caslab-yonsei.github.io/publications/hpca26-hshin/'
     }
   },
