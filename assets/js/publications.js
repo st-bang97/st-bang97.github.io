@@ -62,8 +62,9 @@ window.PUBLICATIONS = [
       result: 'The optimizer stays fully offloaded and training stays identical, yet throughput matches GPU-resident ZeRO-3 (681 vs. 682 TFLOPS per GPU on OPT-30B with 4 B200 GPUs): up to 4× ZeRO-Infinity and 3× SuperOffload, with models up to 95B on 8 B200 GPUs.',
     },
     bibtex: '@inproceedings{bang2027reflow,\n  title     = {{ReFlow}: Exposing Parallelism in {CPU}-Offloaded {LLM} Training via Register-Resident {SIMD} Fusion and Decoupled Update Scheduling},\n  author    = {Bang, Seongtae and Park, Gyeongseo and Kang, Ki-Dong and Shin, Hyunkyun and Kim, Sungju and Kim, Daehoon},\n  booktitle = {Proceedings of the 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1 (ASPLOS \'27)},\n  address   = {Heraklion, Greece},\n  year      = {2027},\n  note      = {To appear}\n}',
-    note: 'Public code · Upstream pull request to DeepSpeed in preparation',
+    note: 'Author camera-ready · Public code · DeepSpeed upstream PR open',
     links: {
+      pdf: 'assets/papers/reflow-asplos2027-camera-ready.pdf',
       code: 'https://github.com/aeasplos/DeepSpeedExample_reflow/tree/main/training/DeepSpeed-Reflow',
       project: 'https://caslab-yonsei.github.io/publications/asplos27-sbang/'
     }
