@@ -70,7 +70,7 @@
   function citeButton(paper, scope) {
     return paper.bibtex
       ? '<button class="cite-toggle" type="button" aria-expanded="false" aria-controls="' + scope + 'cite-' + esc(paper.id) + '">Cite</button>'
-      : '';
+      : '<span class="citation-pending" title="Official citation will be available after publication.">Citation pending</span>';
   }
 
   function citePanel(paper, scope) {
