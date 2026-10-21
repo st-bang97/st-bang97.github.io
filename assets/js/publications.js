@@ -61,7 +61,7 @@ window.PUBLICATIONS = [
       approach: 'Instead of hiding the host path, ReFlow fixes it. Intermediates stay in CPU registers, gradients cross PCIe in compact BF16, and the parameters the GPU needs next are produced first while the FP32 state is written later, off the critical path.',
       result: 'The optimizer stays fully offloaded and training stays identical, yet throughput matches GPU-resident ZeRO-3 (681 vs. 682 TFLOPS per GPU on OPT-30B with 4 B200 GPUs): up to 4× ZeRO-Infinity and 3× SuperOffload, with models up to 95B on 8 B200 GPUs.',
     },
-    bibtex: '@inproceedings{bang2027reflow,\n  title     = {{ReFlow}: Exposing Parallelism in {CPU}-Offloaded {LLM} Training via Register-Resident {SIMD} Fusion and Decoupled Update Scheduling},\n  author    = {Bang, Seongtae and Park, Gyeongseo and Kang, Ki-Dong and Shin, Hyunkyun and Kim, Sungju and Kim, Daehoon},\n  booktitle = {Proceedings of the 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1 (ASPLOS \'27)},\n  address   = {Heraklion, Greece},\n  year      = {2027},\n  note      = {To appear}\n}',
+    bibtex: null,
     note: 'Author camera-ready · Public code · DeepSpeed upstream PR open',
     links: {
       pdf: 'assets/papers/reflow-asplos2027-camera-ready.pdf',
@@ -96,7 +96,7 @@ window.PUBLICATIONS = [
       approach: 'ReclaimX turns fault-stalled TPCs into memory reclaimers. Relief starts on the device immediately, at the 64 KB granularity of the demand; cold, compressible blocks stay compressed inside HBM and are restored locally instead of round-tripping through the host. No compute is reserved and no running core is throttled.',
       result: '2.33× geomean speedup over baseline UVM across 12 workloads, and up to 3.61× with state-of-the-art prefetchers with 90.6% fewer far-page faults. Even an idealized host-controlled version reaches only 90–94% of ReclaimX, showing that running reclamation on the device is what matters.',
     },
-    bibtex: '@inproceedings{bang2026reclaimx,\n  title     = {{ReclaimX}: Device-Side Memory Reclamation via Stalled {GPU} Execution for {UVM} Oversubscription},\n  author    = {Bang, Seongtae and Shin, Hyunkyun and Park, Hyungwon and Kim, Minho and Kim, Daehoon},\n  booktitle = {Proceedings of the IEEE/ACM International Symposium on Microarchitecture (MICRO)},\n  year      = {2026},\n  note      = {To appear}\n}',
+    bibtex: null,
     links: {
       code: 'https://github.com/st-bang97/ReclaimX_MICRO2026',
       project: 'https://caslab-yonsei.github.io/publications/micro26-sbang/'
@@ -128,7 +128,7 @@ window.PUBLICATIONS = [
       approach: 'ReplayOpt splits the step by deadline: dispatch computes and sends the next-step parameters first so the GPU resumes at once, and replay reconstructs and persists the deferred FP32 state while the GPU computes.',
       result: 'CPU-side optimizer time drops by up to 55.2% and end-to-end step time by up to 21.7%, without accuracy loss. This deadline-aware view later grew into ReFlow.',
     },
-    bibtex: '@article{bang2026replayopt,\n  title   = {{ReplayOpt}: Optimizer-State Replay to Resolve Critical-Path Bottlenecks in Offloaded Training},\n  author  = {Bang, Seongtae and Park, Gyeongseo and Ryu, Kyeonghyeon and Kim, Daehoon},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {25},\n  number  = {1},\n  pages   = {142--145},\n  year    = {2026},\n  doi     = {10.1109/LCA.2026.3676470}\n}',
+    bibtex: '@article{bang2026replayopt,\n  title   = {{ReplayOpt}: Optimizer-State Replay to Resolve Critical-Path Bottlenecks in Offloaded Training},\n  author  = {Seongtae Bang and Gyeongseo Park and Kyeonghyeon Ryu and Daehoon Kim},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {25},\n  number  = {1},\n  pages   = {142--145},\n  year    = {2026},\n  doi     = {10.1109/LCA.2026.3676470}\n}',
     links: {
       doi: 'https://doi.org/10.1109/LCA.2026.3676470',
       project: 'https://caslab-yonsei.github.io/publications/cal26-sbang/'
@@ -161,7 +161,7 @@ window.PUBLICATIONS = [
       approach: 'ARIADNE keeps UVM’s abstraction and changes only the driver: it places each region in GPU memory or zero-copy according to its live sharing behavior and pipelines fault handling to hide migration latency, so even closed-source binaries benefit without recompilation.',
       result: 'Average speedups of 1.9×, 5.0×, and 4.8× over a state-of-the-art method at 130%, 175%, and 300% oversubscription, while preventing thrashing and scaling near-linearly.',
     },
-    bibtex: '@inproceedings{shin2026ariadne,\n  title     = {{ARIADNE}: Adaptive {UVM} Management for Efficient {GPU} Memory Oversubscription},\n  author    = {Shin, Hyunkyun and Bang, Seongtae and Park, Hyungwon and Kim, Daehoon},\n  booktitle = {2026 IEEE International Symposium on High Performance Computer Architecture (HPCA)},\n  address   = {Sydney, Australia},\n  pages     = {1--15},\n  year      = {2026},\n  doi       = {10.1109/HPCA68181.2026.11408564}\n}',
+    bibtex: '@inproceedings{shin2026ariadne,\n  title     = {{ARIADNE}: Adaptive {UVM} Management for Efficient {GPU} Memory Oversubscription},\n  author    = {Hyunkyun Shin and Seongtae Bang and Hyungwon Park and Daehoon Kim},\n  booktitle = {2026 IEEE International Symposium on High Performance Computer Architecture (HPCA)},\n  address   = {Sydney, Australia},\n  pages     = {1--15},\n  year      = {2026},\n  doi       = {10.1109/HPCA68181.2026.11408564}\n}',
     links: {
       doi: 'https://doi.org/10.1109/HPCA68181.2026.11408564',
       code: 'https://github.com/st-bang97/ARIADNE_HPCA26',
@@ -194,7 +194,7 @@ window.PUBLICATIONS = [
       approach: 'pNet-gem5 adds multiple hardware queues and Message Signaled Interrupts so each queue maps to a dedicated core, and decouples packet distribution and scheduling from the NIC logic so researchers can plug in their own policies.',
       result: 'Kernel-networked servers can now be simulated at up to 46 Gbps instead of a few Gbps, in line with today’s tens-of-Gbps networks. The source code and execution examples are public.',
     },
-    bibtex: '@article{shin2025pnetgem5,\n  title   = {{pNet-gem5}: Full-System Simulation with High-Performance Networking Enabled by Parallel Network Packet Processing},\n  author  = {Shin, Jongmin and Bang, Seongtae and Park, Gyeongseo and Kim, Daehoon},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {24},\n  number  = {2},\n  pages   = {193--196},\n  year    = {2025},\n  doi     = {10.1109/LCA.2025.3577232}\n}',
+    bibtex: '@article{shin2025pnetgem5,\n  title   = {{pNet-gem5}: Full-System Simulation with High-Performance Networking Enabled by Parallel Network Packet Processing},\n  author  = {Jongmin Shin and Seongtae Bang and Gyeongseo Park and Daehoon Kim},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {24},\n  number  = {2},\n  pages   = {193--196},\n  year    = {2025},\n  doi     = {10.1109/LCA.2025.3577232}\n}',
     links: {
       doi: 'https://doi.org/10.1109/LCA.2025.3577232',
       code: 'https://github.com/caslab-yonsei/pNet-gem5',
@@ -229,7 +229,7 @@ window.PUBLICATIONS = [
       approach: 'SAFE reads each block’s sharing status from the GPU’s existing unified TLBs and chooses a prefetch setting per block, with no hardware changes and negligible overhead.',
       result: 'Up to 6.5× faster than the default UVM prefetcher on predominantly irregular workloads, and 3.6× faster on average.',
     },
-    bibtex: '@article{shin2025safe,\n  title   = {{SAFE}: Sharing-Aware Prefetching for Efficient {GPU} Memory Management with Unified Virtual Memory},\n  author  = {Shin, Hyunkyun and Bang, Seongtae and Park, Hyungwon and Kim, Daehoon},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {24},\n  number  = {1},\n  pages   = {117--120},\n  year    = {2025},\n  doi     = {10.1109/LCA.2025.3553143}\n}',
+    bibtex: '@article{shin2025safe,\n  title   = {{SAFE}: Sharing-Aware Prefetching for Efficient {GPU} Memory Management with Unified Virtual Memory},\n  author  = {Hyunkyun Shin and Seongtae Bang and Hyungwon Park and Daehoon Kim},\n  journal = {IEEE Computer Architecture Letters},\n  volume  = {24},\n  number  = {1},\n  pages   = {117--120},\n  year    = {2025},\n  doi     = {10.1109/LCA.2025.3553143}\n}',
     links: {
       doi: 'https://doi.org/10.1109/LCA.2025.3553143',
       project: 'https://caslab-yonsei.github.io/publications/cal25-hshin/'
