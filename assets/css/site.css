@@ -448,6 +448,7 @@ a.signal:hover { border-color: rgba(var(--tc-rgb), 0.45); color: var(--tc); }
 .cite-toggle::after { content: " +"; }
 .cite-toggle[aria-expanded="true"]::after { content: " −"; }
 .cite-toggle:hover { color: var(--brand-deep); }
+.citation-pending { color: var(--soft); font-weight: 600; }
 .cite-panel {
   margin-top: 12px;
   padding: 12px 14px;
