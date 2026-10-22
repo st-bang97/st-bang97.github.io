@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Seongtae Bang — Curriculum Vitae</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+@page { size: A4; margin: 12.5mm 14.6mm 11.7mm 14.6mm; }
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; }
+body { font-family: "DejaVu Sans", "Liberation Sans", sans-serif; font-size: 8.12pt; color:#151b23; line-height:1.28; }
+a { color:#134f81; text-decoration:none; }
+header { margin-bottom: 7.5pt; }
+h1 { font-size:21.5pt; line-height:1; margin:0 0 4.4pt 0; font-weight:700; color:#111820; }
+.contact { font-size:8.2pt; color:#32373f; }
+section { margin-top:7.1pt; }
+h2 { font-size:9.8pt; font-weight:700; border-bottom:0.65px solid #98a5af; padding-bottom:2.3pt; margin:0 0 4.8pt; letter-spacing:0.05pt; }
+.interest { font-size:8.65pt; font-weight:600; line-height:1.25; }
+.entry { margin:0 0 4.6pt; break-inside:avoid; }
+.entryhead { display:flex; justify-content:space-between; gap:6pt; align-items:baseline; }
+.entrytitle { font-size:8.85pt; line-height:1.18; font-weight:700; }
+.entrydate { flex-shrink:0; font-size:7.85pt; font-weight:600; white-space:nowrap; color:#414141; }
+.subline { font-size:8.1pt; padding-left:11pt; margin:1.3pt 0 0; }
+.degree,.detail { font-size:8.1pt; margin:1.3pt 0 0; padding-left:11pt; }
+.degree { font-style:italic; }
+.skillsline { margin:2.0pt 0; font-size:8.15pt; line-height:1.25; }
+ul { margin:2.8pt 0 0 0; padding-left:14.5pt; }
+li { margin:0 0 3pt; padding-left:.3pt; }
+.research { margin-bottom:6.7pt; }
+.research li { line-height:1.29; }
+.codelinks { padding-left:8.5pt; margin-top:3pt; font-size:7.68pt; line-height:1.25; overflow-wrap:anywhere; }
+.codelinks div { margin:1.25pt 0; }
+.pub { font-size:7.77pt; line-height:1.27; margin:0 0 5.5pt; break-inside:avoid; }
+.split { break-before:page; }
+.continued { font-size:9.75pt; font-weight:700; border-bottom:0.65px solid #98a5af; padding-bottom:2.3pt; margin:0 0 6.0pt; }
+.note { color:#515965; font-size:7.65pt; font-style:italic; }
+</style></head><body>
+<header><h1>Seongtae Bang</h1><div class="contact"><a href="mailto:st.bang@dgist.ac.kr">st.bang@dgist.ac.kr</a>  &nbsp;|&nbsp; <a href="https://st-bang97.github.io">st-bang97.github.io</a>  &nbsp;|&nbsp; <a href="https://github.com/st-bang97">github.com/st-bang97</a>  &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/stbang/">linkedin.com/in/stbang</a></div></header>
+<section><h2>TECHNICAL INTERESTS</h2><div class="interest">GPU &amp; Heterogeneous Systems, AI Training Systems, GPU Memory Management, Runtime &amp; Parallel Execution, Computer Architecture</div></section>
+<section><h2>EDUCATION</h2>
+<div class="entry"><div class="entryhead"><div class="entrytitle">Daegu Gyeongbuk Institute of Science and Technology (DGIST)</div><div class="entrydate">Mar. 2020 - Feb. 2027 (Expected)</div></div><div class="detail">Ph.D. Student, Electrical Engineering and Computer Science</div></div>
+<div class="entry"><div class="entryhead"><div class="entrytitle">Daegu Gyeongbuk Institute of Science and Technology (DGIST)</div><div class="entrydate">Mar. 2016 - Feb. 2020</div></div><div class="detail">B.E., School of Undergraduate Studies</div></div>
+</section>
+<section><h2>SKILLS &amp; EXPERTISE</h2>
+<div class="skillsline"><b>Programming:</b> C, C++, CUDA C/C++, Python, OpenMP, AVX-512 SIMD</div>
+<div class="skillsline"><b>AI Frameworks &amp; Training:</b> PyTorch, DeepSpeed (ZeRO-3), Megatron-LM, gsplat, mixture-of-experts, distributed training</div>
+<div class="skillsline"><b>GPU &amp; CPU-GPU Systems:</b> NVIDIA open-source UVM driver, GPU memory management, CPU-GPU communication/overlap, NUMA</div>
+<div class="skillsline"><b>Profiling &amp; Simulation:</b> Nsight Systems/Compute, GPGPU-Sim, Accel-Sim, gem5, dist-gem5</div>
+</section>
+<section><h2>OPEN-SOURCE CONTRIBUTIONS</h2>
+<div class="entry"><div class="entryhead"><div class="entrytitle">DeepSpeed — ZeRO-3 CPU Offloading and Large-Scale Training</div><div class="entrydate">2026</div></div></div>
+<ul><li>Identified a ZeRO-3 CPUAdam correctness issue in repeated same-step subgroup updates, developed a fix and regression tests, and <b>merged the fix upstream</b> (<a href="https://github.com/deepspeedai/DeepSpeed/pull/7982">PR #7982</a>).</li>
+<li>Submitted ReFlow for upstream integration as an asynchronous CPU-offloaded ZeRO-3 implementation, including optimizer kernels, gradient handling, and correctness tests (<a href="https://github.com/deepspeedai/DeepSpeed/pull/8719">PR #8719</a>).</li>
+<li>Reviewed CPUAdam fusion work (<a href="https://github.com/deepspeedai/DeepSpeed/pull/8841">PR #8841</a>) and shared additional optimization directions for the standard CPU-offload path through the <a href="https://github.com/deepspeedai/DeepSpeed/issues/8672">DeepSpeed Q4 roadmap (#8672)</a>.</li></ul></section>
+<section><h2>EXPERIENCES</h2>
+<div class="entry"><div class="entryhead"><div class="entrytitle">Graduate Researcher, <a href="https://caslab-yonsei.github.io/">CASLAB</a></div><div class="entrydate">Mar. 2020 - Feb. 2027</div></div><div class="subline"><b>Yonsei University</b>, Seoul (Sep. 2024 - Feb. 2027) &nbsp;·&nbsp; <b>DGIST</b>, Daegu (Mar. 2020 - Aug. 2024)</div><div class="detail">Conducted Ph.D. research with Prof. Daehoon Kim across GPU memory systems, heterogeneous execution, and AI training; continued at Yonsei after the lab moved, while remaining enrolled at DGIST.</div></div>
+<div class="entry"><div class="entryhead"><div class="entrytitle">Teaching Assistant — Computer Architecture, DGIST</div><div class="entrydate">Mar. 2021 - Jul. 2021</div></div><div class="detail">Undergraduate Computer Architecture course.</div></div>
+<div class="entry"><div class="entryhead"><div class="entrytitle">Industry Intern — Winitech Co., Ltd.</div><div class="entrydate">Dec. 2017 - Feb. 2018</div></div><div class="detail">Company-University Cooperation (CUop) Program.</div></div>
+<div class="entry"><div class="entryhead"><div class="entrytitle">FGLP Participant — University of California, Berkeley</div><div class="entrydate">Jun. 2016 - Aug. 2016</div></div><div class="detail">Freshmen Global Leadership Program (FGLP).</div></div>
+</section><section><h2>RESEARCH ACTIVITIES</h2>
+<div class="entry research"><div class="entryhead"><div class="entrytitle">ReFlow / ReplayOpt: CPU-Offloaded LLM Training</div><div class="entrydate">ASPLOS 2027 / IEEE CAL 2026</div></div><ul><li>Conventional offloading approaches primarily hide host-side update latency; profiling instead identified <b>unnecessary host-memory traffic and repeated gradient movement</b> as the dominant costs, rather than CPU optimizer arithmetic.</li><li>Redesigned DeepSpeed ZeRO-3 around CPU-side gradient processing, register-resident SIMD fusion, and dependency-aware Ready/Persist scheduling, separating GPU-critical parameter generation from optimizer-state work that can finish later.</li><li>Validated training semantics and regression behavior across Adam/AdamW and Lion, clipping, overflow, checkpointing, and single-/multi-GPU systems including <b>NVIDIA B200, A100, and RTX PRO GPUs</b>; achieved up to <b>4.0× throughput</b> over ZeRO-Infinity in evaluated configurations.</li></ul><div class="codelinks"><div><b>Code:</b> <a href="https://github.com/st-bang97/DeepSpeed/tree/PR_branch">https://github.com/st-bang97/DeepSpeed/tree/PR_branch</a></div><div><b>Example:</b> <a href="https://github.com/st-bang97/DeepSpeedExamples/tree/PR_branch">https://github.com/st-bang97/DeepSpeedExamples/tree/PR_branch</a></div></div></div>
+<div class="entry research"><div class="entryhead"><div class="entrytitle">ReclaimX: Device-Side Reclamation under UVM Oversubscription</div><div class="entrydate">MICRO 2026</div></div><ul><li>Rather than accepting the host-driven UVM reclamation path while GPU resources wait on page faults, reinterpreted <b>fault-stalled GPU execution capacity</b> as an opportunity to perform reclamation.</li><li>Designed fine-grained victim ordering, selective compressed residency, and GPU-local restoration to reduce host-mediated recovery; evaluated the architecture through cycle-level GPU/UVM simulation.</li></ul><div class="codelinks"><div><b>Code:</b> <a href="https://github.com/st-bang97/ReclaimX_MICRO2026">https://github.com/st-bang97/ReclaimX_MICRO2026</a></div></div></div>
+</section>
+<div class="split"><div class="continued">RESEARCH ACTIVITIES (CONTINUED)</div>
+<div class="entry research"><div class="entryhead"><div class="entrytitle">NVIDIA UVM Driver Research — ARIADNE / SAFE</div><div class="entrydate">HPCA 2026 / IEEE CAL 2025</div></div><ul><li>Conventional UVM migration and prefetching heuristics can move data that does not match application sharing or access patterns; analyzed page faults, runtime sharing, and evolving memory demand to identify ineffective transfers.</li><li>Modified NVIDIA open-source UVM driver paths to adapt memory-management and prefetch decisions to observed workload behavior.</li></ul><div class="codelinks"><div><b>Code:</b> <a href="https://github.com/st-bang97/ARIADNE_HPCA26">https://github.com/st-bang97/ARIADNE_HPCA26</a></div></div></div>
+<div class="entry research"><div class="entryhead"><div class="entrytitle">pNet-gem5: Full-System Network Simulation</div><div class="entrydate">IEEE CAL 2025</div></div><ul><li>Identified missing multi-queue NIC and guest-network support in dist-gem5-based full-system simulation, limiting the ability to model parallel packet processing.</li><li>Implemented a <b>multi-queue gem5 NIC model and corresponding guest driver</b>, integrating the modeled device with the OS network stack.</li></ul><div class="codelinks"><div><b>Code:</b> <a href="https://github.com/caslab-yonsei/pNet-gem5">https://github.com/caslab-yonsei/pNet-gem5</a></div></div></div>
+<div class="entry research"><div class="entryhead"><div class="entrytitle">Memory-Scalable Mixture-of-Experts Training</div><div class="entrydate">Under Review · Megatron-LM</div></div><ul><li>Existing offloading choices trade HBM capacity against efficient grouped expert execution; analyzed routing demand and grouped-GEMM granularity to redesign parameter residency and update timing.</li><li>Profiled and modified Megatron-LM CPU optimizer and training paths to reduce host-side data movement while keeping routed expert computation grouped and GPU-efficient.</li></ul><div class="codelinks"><div><b>Code:</b> Planned release after peer review; Megatron-LM upstream contribution planned.</div></div></div>
+<div class="entry research"><div class="entryhead"><div class="entrytitle">Memory-Scalable 3D Gaussian Splatting Training</div><div class="entrydate">Under Review · gsplat</div></div><ul><li>Moving large 3DGS state off GPU memory leaves GPU-side culling residency or creates a new CPU culling bottleneck; instead, redesigned the culling algorithm for efficient CPU execution.</li><li>Overlapped future-view CPU culling and preparation with current-view GPU rasterization/backpropagation, reducing model-proportional GPU residency without delaying the GPU pipeline.</li></ul><div class="codelinks"><div><b>Code:</b> Planned release after peer review.</div></div></div>
+<section><h2>HONORS &amp; FUNDING</h2>
+<div class="entry"><div class="entryhead"><div class="entrytitle">MICRO 2026 Student Travel Grant</div><div class="entrydate">2026</div></div><div class="detail">59th IEEE/ACM International Symposium on Microarchitecture</div></div>
+<div class="entry"><div class="entryhead"><div class="entrytitle">Government Scholarship (Graduate), DGIST</div><div class="entrydate">Mar. 2020 - Feb. 2025</div></div></div>
+<div class="entry"><div class="entryhead"><div class="entrytitle">Faculty Council Scholarship, DGIST</div><div class="entrydate">Mar. 2019 - Feb. 2020</div></div></div>
+<div class="entry"><div class="entryhead"><div class="entrytitle">Government Scholarship (Undergraduate), DGIST</div><div class="entrydate">Mar. 2016 - Feb. 2020</div></div></div>
+</section>
+<section><h2>PUBLICATIONS</h2>
+<p class="pub"><b>[ASPLOS 2027]</b> <b>Seongtae Bang</b>, Gyeongseo Park, Ki-Dong Kang, Hyunkyun Shin, Sungju Kim, and Daehoon Kim. <b>ReFlow: Exposing Parallelism in CPU-Offloaded LLM Training via Register-Resident SIMD Fusion and Decoupled Update Scheduling.</b> ACM International Conference on Architectural Support for Programming Languages and Operating Systems, 2027.</p>
+<p class="pub"><b>[MICRO 2026]</b> <b>Seongtae Bang</b>, Hyunkyun Shin, Hyungwon Park, Minho Kim, and Daehoon Kim. <b>ReclaimX: Device-Side Memory Reclamation via Stalled GPU Execution for UVM Oversubscription.</b> IEEE/ACM International Symposium on Microarchitecture, 2026.</p>
+<p class="pub"><b>[HPCA 2026]</b> Hyunkyun Shin, <b>Seongtae Bang</b>, Hyungwon Park, and Daehoon Kim. <b>ARIADNE: Adaptive UVM Management for Efficient GPU Memory Oversubscription.</b> IEEE International Symposium on High-Performance Computer Architecture, 2026.</p>
+<p class="pub"><b>[IEEE CAL 2026]</b> <b>Seongtae Bang</b>, Gyeongseo Park, Kyeonghyeon Ryu, and Daehoon Kim. <b>ReplayOpt: Optimizer-State Replay to Resolve Critical-Path Bottlenecks in Offloaded Training.</b> IEEE Computer Architecture Letters, 2026.</p>
+<p class="pub"><b>[IEEE CAL 2025]</b> Hyunkyun Shin†, <b>Seongtae Bang†</b>, Hyungwon Park, and Daehoon Kim. <b>SAFE: Sharing-Aware Prefetching for Efficient GPU Memory Management with Unified Virtual Memory.</b> IEEE Computer Architecture Letters, 2025. † Equal contribution.</p>
+<p class="pub"><b>[IEEE CAL 2025]</b> Jongmin Shin, <b>Seongtae Bang</b>, Gyeongseo Park, and Daehoon Kim. <b>pNet-gem5: Full-System Simulation with High-Performance Networking Enabled by Parallel Network Packet Processing.</b> IEEE Computer Architecture Letters, 2025.</p>
+</section></div></body></html>
