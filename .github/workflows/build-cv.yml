@@ -1,0 +1,34 @@
+name: Build CV PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/cv/seongtae-bang-cv.html'
+      - '.github/workflows/build-cv.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PDF renderer
+        run: pip install weasyprint==68.0
+      - name: Generate PDF from the maintained HTML source
+        run: weasyprint assets/cv/seongtae-bang-cv.html assets/cv/seongtae-bang-cv.pdf
+      - name: Commit updated PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/cv/seongtae-bang-cv.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh website CV PDF"
+            git push
+          fi
