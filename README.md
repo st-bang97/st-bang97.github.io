@@ -46,7 +46,7 @@ Edit the profile text, Research Focus, News, Technical skills, and Education dir
 - **Citations:** each paper's `bibtex` entry is shown by its "Cite" button on the publications page and in the Overview window.
 - **Logos:** the skill logos live in `assets/images/logos/` (copied from Devicon, Simple Icons, and each project's repository) so the page never depends on an outside image host.
 - **Stack diagram:** list paper ids under the layer they change in `assets/js/research.js`; the pill color follows the paper's `thread`.
-- **CV:** replace `assets/cv/seongtae-bang-cv.pdf` with the new PDF (same file name); the header, profile, and contact links already point to it.
+- **CV:** edit `assets/cv/seongtae-bang-cv.html`. The `Build CV PDF` GitHub Actions workflow automatically regenerates `assets/cv/seongtae-bang-cv.pdf` at the same path; header, profile, and contact links continue pointing to the PDF.
 - **Google Scholar:** uncomment the Scholar line in the profile links of `index.html` and paste the profile URL.
 - **Photo:** replace `assets/images/profile.jpg` with a 3:4 image around 600×800 px.
 - **Link preview:** `assets/images/og-card.png` is referenced from the page `<head>`; regenerate it when the headline papers change.
