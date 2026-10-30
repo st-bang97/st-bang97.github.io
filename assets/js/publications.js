@@ -62,7 +62,7 @@ window.PUBLICATIONS = [
       result: 'The optimizer stays fully offloaded and training stays identical, yet throughput matches GPU-resident ZeRO-3 (681 vs. 682 TFLOPS per GPU on OPT-30B with 4 B200 GPUs): up to 4× ZeRO-Infinity and 3× SuperOffload, with models up to 95B on 8 B200 GPUs.',
     },
     bibtex: null,
-    note: 'Author camera-ready · Public code · DeepSpeed upstream PR open',
+    note: 'Author camera-ready · Public code · DeepSpeed integration in progress',
     links: {
       pdf: 'assets/papers/reflow-asplos2027-camera-ready.pdf',
       code: 'https://github.com/aeasplos/DeepSpeedExample_reflow/tree/main/training/DeepSpeed-Reflow',
