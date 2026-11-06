@@ -65,6 +65,7 @@ window.PUBLICATIONS = [
     note: 'Author camera-ready · Public code · DeepSpeed integration in progress',
     links: {
       pdf: 'assets/papers/reflow-asplos2027-camera-ready.pdf',
+      doi: 'https://doi.org/10.1145/3845814.3850051',
       code: 'https://github.com/aeasplos/DeepSpeedExample_reflow/tree/main/training/DeepSpeed-Reflow',
       project: 'https://caslab-yonsei.github.io/publications/asplos27-sbang/'
     }
