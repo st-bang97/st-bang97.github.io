@@ -586,7 +586,6 @@ a.pill:hover { color: #fff; filter: brightness(1.12); }
   font-size: 1.45rem;
   font-weight: 600;
 }
-.publication-news { margin-top: 42px; max-width: 960px; }
 .news-stream { border-top: 1px solid var(--line); }
 .news-row {
   display: grid;
