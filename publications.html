@@ -29,17 +29,32 @@
     <nav class="site-nav" aria-label="Primary">
       <a href="index.html#research">Research</a>
       <a href="publications.html" aria-current="page">Publications</a>
-      <a href="index.html#news">News</a>
       <a href="assets/cv/seongtae-bang-cv.pdf">CV</a>
     </nav>
   </div>
 </header>
 
 <main id="main" class="container">
-  <div class="page-hero">
-    <h1>Publications</h1>
-    <p>Research spanning GPU memory systems, CPU–GPU execution, and full-system simulation.</p>
-  </div>
+  <section class="publication-page-news" id="news" aria-labelledby="news-title">
+    <div class="page-hero">
+      <h1 id="news-title">News</h1>
+    </div>
+    <div class="news-stream">
+            <div class="news-row"><span class="news-year">2026</span><p><a href="publications.html#reflow"><strong>ReFlow's FusedOpt techniques</strong></a> are now implemented in DeepSpeed's mainline CPU Adam (<a href="https://github.com/deepspeedai/DeepSpeed/pull/8841">PR #8841</a>). Related BF16 gradient handling is under development for SuperOffload (<a href="https://github.com/deepspeedai/DeepSpeed/pull/9021">PR #9021</a>), with broader ReFlow integration endorsed by maintainers (<a href="https://github.com/deepspeedai/DeepSpeed/issues/8697">discussion</a>).</p></div>
+            <div class="news-row"><span class="news-year">2026</span><p><a href="publications.html#reflow"><strong>ReFlow</strong></a> added to the official <a href="https://github.com/deepspeedai/DeepSpeed/issues/8672"><strong>DeepSpeed roadmap</strong></a>; upstream integration is underway (<a href="https://github.com/deepspeedai/DeepSpeed/pull/8719">PR #8719</a>).</p></div>
+            <div class="news-row"><span class="news-year">2026</span><p><a href="publications.html#reflow"><strong>ReFlow</strong></a> accepted to <strong class="venue-inline">ASPLOS 2027</strong>.</p></div>
+            <div class="news-row"><span class="news-year">2026</span><p><a href="publications.html#reclaimx"><strong>ReclaimX</strong></a> accepted to <strong class="venue-inline">MICRO 2026</strong>.</p></div>
+            <div class="news-row"><span class="news-year">2026</span><p><a href="publications.html#replayopt"><strong>ReplayOpt</strong></a> accepted for publication in <strong class="venue-inline">IEEE CAL</strong>.</p></div>
+            <div class="news-row"><span class="news-year">2025</span><p><a href="publications.html#ariadne"><strong>ARIADNE</strong></a> accepted to <strong class="venue-inline">HPCA 2026</strong>.</p></div>
+            <div class="news-row"><span class="news-year">2025</span><p><a href="publications.html#safe"><strong>SAFE</strong></a> and <a href="publications.html#pnet-gem5"><strong>pNet-gem5</strong></a> accepted for publication in <strong class="venue-inline">IEEE CAL</strong>.</p></div>
+          </div>
+  </section>
+
+  <section class="publication-page-list" id="publications" aria-labelledby="publications-title">
+    <div class="page-hero">
+      <h2 class="section-title" id="publications-title">Publications</h2>
+      <p>Research spanning GPU memory systems, CPU–GPU execution, and full-system simulation.</p>
+    </div>
   <div data-region="publication-list" data-sig="11c3p08">
 <!-- region:publication-list -->
 
@@ -93,6 +108,7 @@
 <p class="footnote"><sup>*</sup> Equal contribution.</p>
 <!-- /region:publication-list -->
   </div>
+  </section>
 </main>
 
 <footer class="site-footer">
