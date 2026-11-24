@@ -31,7 +31,7 @@
  *   details     prior / insight / approach / result shown in the Overview window
  *   note        optional status line (artifact, upstream contribution)
  *   bibtex      BibTeX entry behind the "Cite" button
- *   links       any of: pdf, doi, artifact, code, slides, video, project
+ *   links       any of: pdf, doi, artifact, code, upstream, slides, video, project
  */
 window.PUBLICATIONS = [
   {
@@ -62,11 +62,12 @@ window.PUBLICATIONS = [
       result: 'The optimizer stays fully offloaded and training stays identical, yet throughput matches GPU-resident ZeRO-3 (681 vs. 682 TFLOPS per GPU on OPT-30B with 4 B200 GPUs): up to 4× ZeRO-Infinity and 3× SuperOffload, with models up to 95B on 8 B200 GPUs.',
     },
     bibtex: null,
-    note: 'Author camera-ready · Public code · DeepSpeed integration in progress',
+    note: 'Author camera-ready · Merged into DeepSpeed mainline',
     links: {
       pdf: 'assets/papers/reflow-asplos2027-camera-ready.pdf',
       doi: 'https://doi.org/10.1145/3845814.3850051',
       code: 'https://github.com/aeasplos/DeepSpeedExample_reflow/tree/main/training/DeepSpeed-Reflow',
+      upstream: 'https://github.com/deepspeedai/DeepSpeed/pull/8719',
       project: 'https://caslab-yonsei.github.io/publications/asplos27-sbang/'
     }
   },

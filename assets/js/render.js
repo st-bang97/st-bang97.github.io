@@ -6,8 +6,8 @@
   'use strict';
 
   var SELF = 'Seongtae Bang';
-  var LINK_ORDER = ['pdf', 'doi', 'artifact', 'code', 'slides', 'video', 'project'];
-  var LINK_LABELS = { pdf: 'PDF', doi: 'DOI', artifact: 'Artifact', code: 'Code', slides: 'Slides', video: 'Talk', project: 'Project' };
+  var LINK_ORDER = ['pdf', 'doi', 'artifact', 'code', 'upstream', 'slides', 'video', 'project'];
+  var LINK_LABELS = { pdf: 'PDF', doi: 'DOI', artifact: 'Artifact', code: 'Code', upstream: 'DeepSpeed PR', slides: 'Slides', video: 'Talk', project: 'Project' };
 
   function esc(value) {
     return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) {
